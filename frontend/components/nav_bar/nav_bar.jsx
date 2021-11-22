@@ -1,6 +1,7 @@
 import React from 'react'
 import { createNewUser } from '../../actions/session_action'
 import { Link } from 'react-router-dom';
+// import './../styles/nav_bar.css'
 
 class NavBar extends React.Component{
     constructor(props){
@@ -12,22 +13,25 @@ class NavBar extends React.Component{
         const display = currentUser ? (
             <div>
                 <h3>Welcome {currentUser.username}!</h3>
-                <button onClick={logout}>Logout</button>
+                <button onClick={logout} >Logout</button>
             </div>
         ) : (
-            <div>
-                <Link className="btn" to="/signup">Sign Up</Link>
-                <Link className="btn" to="/login">Log In</Link>
+            <div className= "auth-home">
+                    <button class="sign-in-button">
+                    <Link className="sign-in-butt" to="/login">Sign in</Link>
+                </button>
+                <br />
+                    New Customer?  
+                    <Link className="btn" to="/signup"> Start here</Link>
             </div>
         );
         return(
-                
-                <header className= 'nav-bar'>
-                    <h1 className= 'logo'> Bamazon</h1>
-                    <div>
-                        {display}
-                    </div>
-                </header>
+            <header className= 'nav-bar'>
+                <h1 className= 'logo'> Bamazon</h1>
+                <div>
+                    {display}
+                </div>
+            </header>
         )
     }
 }

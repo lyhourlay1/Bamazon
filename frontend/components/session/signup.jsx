@@ -57,9 +57,8 @@ class Signup extends React.Component{
                     <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
                 <div>
-                    <p>Already have an account?</p>
-                    <Link className="btn" to="/login">Sign-in</Link>
-                    
+                    Already have an account? 
+                    <Link className="btn" to="/login"> Sign-in</Link>               
                 </div>
             </div>
         )

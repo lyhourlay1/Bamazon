@@ -39,6 +39,7 @@ class Login extends React.Component{
     render(){
         return(
             <div className= 'session-form'>
+                <header><img src="app/assets/images/bamazon_Authlogo.png"/></header>
                 <h2>Log In!</h2>
                 {this.renderErrors()}
                 <form>
