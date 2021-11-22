@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component{
     constructor(props){
@@ -26,13 +27,15 @@ class Signup extends React.Component{
 
     renderErrors() {
         return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
+            <div className="session-errors">
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         );
     }
 
@@ -53,6 +56,11 @@ class Signup extends React.Component{
                     </label>
                     <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
+                <div>
+                    <p>Already have an account?</p>
+                    <Link className="btn" to="/login">Sign-in</Link>
+                    
+                </div>
             </div>
         )
 

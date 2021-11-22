@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
+
 class Login extends React.Component{
 
     constructor(props){
@@ -17,7 +20,7 @@ class Login extends React.Component{
     }
     renderErrors() {
         return (
-            <div className = "errors">
+            <div className = "session-errors">
                 <ul>
                     {this.props.errors.map((error, i) => (
                         <li key={`error-${i}`}>
@@ -47,6 +50,11 @@ class Login extends React.Component{
                     </label>
                     <button onClick={this.handleSubmit}>Log in</button>
                 </form>
+                <div>
+                    <button>
+                        <Link className="btn" to="/signup">Create you Bamazon Account</Link>
+                    </button>
+                </div>
             </div>
         )
     }
