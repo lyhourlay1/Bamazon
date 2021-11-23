@@ -1,14 +1,16 @@
 import { connect } from "react-redux";
 import React from 'react'
 import NavBar from './nav_bar'
-import {logout} from '../../actions/session_action'
+import {logout,demoLogin} from '../../actions/session_action'
 
 const mSTP = state => ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    demoUser: {username: "demo", password:'password'}
 })
 
 const mDTP = dispatch=> ({
-    logout: ()=> dispatch(logout())
+    logout: ()=> dispatch(logout()),
+    demoLogin: formUser => dispatch(demoLogin(formUser))
 })
 
 

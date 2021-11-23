@@ -27,6 +27,8 @@ export const login = formUser => dispatch => postSession(formUser)
     .then(user =>  dispatch(receiveCurrentUser(user)),
     error => dispatch(receiveErrors(error.responseJSON))
 )
+export const demoLogin = formUser => dispatch => postSession(formUser)
+    .then(user => dispatch(receiveCurrentUser(user)))
 
 export const logout = ()=> dispatch => deleteSession()
     .then(()=> dispatch(logoutCurrentUser()))
