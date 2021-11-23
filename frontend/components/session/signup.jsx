@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class Signup extends React.Component{
     constructor(props){
         super(props)
-
         this.state ={
             username: "",
             email: "",
@@ -38,19 +37,25 @@ class Signup extends React.Component{
             </div>
         );
     }
-
     render(){
         return (
             <div className = "session-form">
+                <header>
+                    <Link className="home" to="/s">
+                        <img src="app/assets/images/bamazon_Authlogo.png" />
+                    </Link>
+                </header>
                 <h2>Sign Up!</h2>
                 {this.renderErrors()}
-                <form>
+                <form >
                     <label>Username
                         <input type="text" value={this.state.username} onChange= {this.update('username')}/>
                     </label>
+                    <br />
                     <label>Email
                         <input type="text" value={this.state.email} onChange= {this.update('email')}/>
                     </label>
+                    <br />
                     <label>Password
                         <input type="password" value={this.state.password} onChange= {this.update('password')}/>
                     </label>
@@ -62,7 +67,6 @@ class Signup extends React.Component{
                 </div>
             </div>
         )
-
     }
 }
 

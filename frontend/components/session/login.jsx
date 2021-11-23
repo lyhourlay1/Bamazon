@@ -39,16 +39,22 @@ class Login extends React.Component{
     render(){
         return(
             <div className= 'session-form'>
-                <header><img src="app/assets/images/bamazon_Authlogo.png"/></header>
+                <header>                        
+                    <Link className="home" to="/s">
+                        <img src="app/assets/images/bamazon_Authlogo.png"/>
+                    </Link>
+                </header>
                 <h2>Log In!</h2>
                 {this.renderErrors()}
-                <form>
+                <form >
                     <label>Username
                         <input type="text" value={this.state.username} onChange={this.update('username')} />
                     </label>
+                    <br />
                     <label>Password
                         <input type="text" value={this.state.password} onChange={this.update('password')} />
                     </label>
+                    <br />
                     <button onClick={this.handleSubmit}>Log in</button>
                 </form>
                 <div>

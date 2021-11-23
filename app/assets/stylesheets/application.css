@@ -47,3 +47,15 @@ button{
     color: black;
     text-decoration: none;
 }
+
+.auth-home{
+  display: none;
+}
+
+.hover-to-auth:hover .auth-home{
+  display: block;
+}
+
+.session-form{
+  text-align: center;
+}

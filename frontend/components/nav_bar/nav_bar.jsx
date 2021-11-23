@@ -16,13 +16,16 @@ class NavBar extends React.Component{
                 <button onClick={logout} >Logout</button>
             </div>
         ) : (
-            <div className= "auth-home">
-                    <button class="sign-in-button">
-                    <Link className="sign-in-butt" to="/login">Sign in</Link>
-                </button>
-                <br />
-                    New Customer?  
-                    <Link className="btn" to="/signup"> Start here</Link>
+            <div className ='hover-to-auth'>Hello, Sign In
+                    <div className= "auth-home">
+                        <button className="sign-in-button">
+                        <Link className="sign-in-butt" to="/login">Sign in</Link>
+                    </button>
+                    <br />
+                        New Customer?  
+                        <Link className="btn" to="/signup"> Start here</Link>
+                </div>
+
             </div>
         );
         return(
