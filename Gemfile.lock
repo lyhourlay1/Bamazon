@@ -204,6 +204,9 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  --add-platform x86_64-linux
+  
+
 
 DEPENDENCIES
   annotate
