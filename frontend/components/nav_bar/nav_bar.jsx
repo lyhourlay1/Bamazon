@@ -9,7 +9,6 @@ class NavBar extends React.Component{
     }
     render(){
         const {currentUser, logout} = this.props
-        //console.log(currentUser)
         const display = currentUser ? (
             <div>
                 <h3>Welcome {currentUser.username}!</h3>
