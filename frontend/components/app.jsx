@@ -7,15 +7,16 @@ import ProductShowContainer from './products/product_show_container'
 import Cart from './cart/cart'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import {Route, Switch} from 'react-router-dom'
+import Splash from './splash'
 
 export default ()=> (
     <div>
         <Switch>
             <AuthRoute path="/signup" component={SignupContainer}/>
             <AuthRoute path="/login" component={LoginContainer}/>
-            <Route path="/" component= { NavBarContainer} />
+            <Route path="/products/:productId" component= {ProductShowContainer}/>
+            <Route path="/" component={Splash} />
+
         </Switch>
-        <Route path="/products" component= {ProductContainer}/>
-        <Route path="/products/:productId" component= {ProductShowContainer}/>
     </div>
 )

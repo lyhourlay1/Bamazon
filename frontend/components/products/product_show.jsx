@@ -4,9 +4,7 @@ class ProductShow extends React.Component{
     constructor(props){
         super(props)
     }
-
     render(){
-        debugger
         return(
             <div>
                 {this.props.product.product_name}
