@@ -3,9 +3,9 @@ import SignupContainer from "./session/signup_container"
 import LoginContainer from './session/login_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import ProductContainer from './products/product_container.jsx'
+import ProductShowContainer from './products/product_show_container'
 import Cart from './cart/cart'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
-
 import {Route, Switch} from 'react-router-dom'
 
 export default ()=> (
@@ -16,6 +16,6 @@ export default ()=> (
             <Route path="/" component= { NavBarContainer} />
         </Switch>
         <Route path="/products" component= {ProductContainer}/>
-
+        <Route path="/products/:productId" component= {ProductShowContainer}/>
     </div>
 )
