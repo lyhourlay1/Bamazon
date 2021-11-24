@@ -7,8 +7,7 @@ class ProductShow extends React.Component{
     render(){
         return(
             <div>
-                {this.props.product.product_name}
-                {this.props.product.description}
+                {this.props.product.product_name}: {this.props.product.description}
             </div>
         )
     }
