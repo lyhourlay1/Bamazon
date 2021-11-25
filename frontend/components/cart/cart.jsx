@@ -5,10 +5,15 @@ class Cart extends React.Component{
         super(props)
     }
 
+    // componentDidMount() {
+    //     this.props.fetchCart(this.props.cart.id)
+    // }
+
     render(){
+        debugger
         return(
             <div>
-                Hello It me
+                Hello
             </div>
         )
     }

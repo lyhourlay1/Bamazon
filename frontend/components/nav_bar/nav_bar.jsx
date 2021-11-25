@@ -1,7 +1,8 @@
 import React from 'react'
 import { createNewUser } from '../../actions/session_action'
 import { Link } from 'react-router-dom';
-// import './../styles/nav_bar.css'
+import SearchBarContainer from '../search_bar/search_bar_container';
+import CartContainer from '../cart/cart_container'
 
 class NavBar extends React.Component{
     constructor(props){
@@ -46,8 +47,16 @@ class NavBar extends React.Component{
         return(
             <header className= 'nav-bar'>
                 <h1 className= 'logo'> Bamazon</h1>
+                <div>
+                    <SearchBarContainer/>
+                </div>
                 <div className ='display-wrapper'>
                     {display}
+                </div>
+                <div>
+                    <Link className="cart-button" to="/cart"> 
+                       <img src="images/shop_cart.png" className='shopping-cart'/>
+                    </Link>
                 </div>
             </header>
         )

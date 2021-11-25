@@ -6,6 +6,10 @@ class Api::SessionsController < ApplicationController
         if @user.nil?
             render json: ['Nope. Wrong credentials!'], status: 401
         else
+            if @user.cart == nil 
+                @cart = Cart.new(user_id: @user.id)
+                @cart.save
+            end
             login!(@user)
             render 'api/users/show';
         end

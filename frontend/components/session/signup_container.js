@@ -1,5 +1,7 @@
 import {connect} from 'react-redux'
 import { createNewUser } from '../../actions/session_action'
+import { createCart } from '../../actions/cart_action'
+
 import Signup from './signup'
 
 const mSTP = ({ errors }) => {
@@ -13,6 +15,7 @@ const mSTP = ({ errors }) => {
 
 const mDTP = dispatch=>({
     createNewUser: formUser => dispatch(createNewUser(formUser))
+    // createCart: userId => dispatch(createCart(userId))
 })
 
 export default connect(mSTP, mDTP)(Signup)

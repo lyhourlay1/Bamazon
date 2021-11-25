@@ -41,7 +41,7 @@ class Login extends React.Component{
             <div className= 'session-form'>
                 <header>                        
                     <Link className="home" to="/s">
-                        <img src="app/assets/images/bamazon_Authlogo.png"/>
+                        <img src="images/bamazon_Authlogo.png" className='amazon-logo'/>
                     </Link>
                 </header>
                 <h2>Log In!</h2>

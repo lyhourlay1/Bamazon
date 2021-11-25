@@ -6,14 +6,13 @@ class Product extends React.Component{
         super(props)
     }
     componentDidMount(){
-        
         this.props.fetchProducts()
     }
     render(){
         return(
             <div>
                 <ul>
-                    {this.props.products.map(product => <ProductIndexItem product={product} />)}
+                    {this.props.products.map(product => <ProductIndexItem product={product} key = {product.id} />)}
                 </ul>
             </div>
         )
