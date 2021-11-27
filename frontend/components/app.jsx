@@ -14,9 +14,8 @@ export default ()=> (
             <AuthRoute path="/login" component={LoginContainer}/>
             {/* <ProtectedRoute exact path="/search/:query" component={ProductIndexContainer} /> */}
             <Route path="/products/:productId" component= {ProductShowContainer}/>
-            <Route path="/cart" component= {CartContainer}/>
+            <Route path="/carts/" component= {CartContainer}/>
             <Route path="/" component={Splash} />
-
         </Switch>
     </div>
 )

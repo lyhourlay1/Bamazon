@@ -9,9 +9,8 @@ Rails.application.routes.draw do
         get :search, to: "products#search", as: "search"
       end
     end
-    resources :carts, only:[:show, :create] do 
-      resources :orders, only:[:create, :index, :show, :update]
-    end
+    resources :carts, only:[:show, :create]
+    resources :orders, only:[:create, :index, :show, :update, :destroy]
 
     
   end

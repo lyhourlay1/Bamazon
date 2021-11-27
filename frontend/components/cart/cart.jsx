@@ -1,19 +1,26 @@
 
 import React from 'react'
+import NavBarContainer from '../nav_bar/nav_bar_container'
+
 class Cart extends React.Component{
     constructor(props){
         super(props)
     }
 
     // componentDidMount() {
-    //     this.props.fetchCart(this.props.cart.id)
+    //     this.props.fetchCart(this.props.currentUser.id)
     // }
 
     render(){
-        debugger
+        
         return(
             <div>
-                Hello
+                <div>
+                    <NavBarContainer/>
+                </div>
+                <div>
+                    {this.props.currentUser.username}
+                </div>
             </div>
         )
     }

@@ -11,7 +11,7 @@
 class Order < ApplicationRecord
     validates :product_id, :cart_id, presence: true
 
-    belongs_to :cart, 
+    belongs_to :cart,
         primary_key: :id,
         foreign_key: :cart_id,
         class_name: :Cart
