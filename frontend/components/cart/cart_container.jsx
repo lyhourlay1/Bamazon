@@ -1,9 +1,9 @@
 import { connect } from "react-redux"
 import Cart from './cart'
 import { fetchCart } from "../../actions/cart_action"
-import { fetchOrders } from "../../actions/order_action"
+import { fetchOrders , deleteOrder} from "../../actions/order_action"
 
-const mSTP = state=>{
+const mSTP = (state, ownProps)=>{
     
     return {
         // cart: state.entities.cart,
@@ -14,7 +14,8 @@ const mSTP = state=>{
 
 const mDTP = dispatch =>({
     // fetchCart: userId => dispatch(fetchCart(userId))
-    fetchOrders: ()=> dispatch(fetchOrders())
+    fetchOrders: ()=> dispatch(fetchOrders()),
+    deleteOrder: orderId=> dispatch(deleteOrder(orderId))
 })
 
 export default connect(mSTP, mDTP)(Cart)

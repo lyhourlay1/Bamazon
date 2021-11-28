@@ -41,5 +41,5 @@ export const updateOrder = order => dispatch => (
 
 export const deleteOrder = orderId => dispatch => (
     OrderApiUtil.deleteOrder(orderId)
-        .then(() => dispatch(removeOrder(oderId)))
+        .then(() => dispatch(removeOrder(orderId)))
 );

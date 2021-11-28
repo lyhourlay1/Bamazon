@@ -21,17 +21,25 @@ class OrderIndexItem extends React.Component {
         this.state = this.props.order
 
         this.handleSubmit=this.handleSubmit.bind(this)
+        this.handleDeleteClick = this.handleDeleteClick.bind(this)
+
     }
 
-    update(){
-        this.state.quantity = parseInt(document.getElementById("quantity-button").value)
-        debugger
-    }
+    // update(){
+    //     this.state.quantity = parseInt(document.getElementById("quantity-button").value)
+    //     debugger
+    // }
 
     handleSubmit(e){
         this.update()
         e.preventDefault()
 
+    }
+
+    handleDeleteClick(e) {
+        e.preventDefault()
+        this.props.deleteOrder(this.state.id).then(window.location.reload())
+        //.then(() => this.props.history.push('/carts/'))
     }
     
     render() {
@@ -52,7 +60,9 @@ class OrderIndexItem extends React.Component {
         return (
             <div>
                 <ul>
-                    <Link to={`/products/${this.props.order.product_id}`}> {this.props.order.product_name}</Link>: 
+                    <Link to={`/products/${this.props.order.product_id}`}> 
+                        {this.props.order.product_name}
+                    </Link>: 
                     <div>
                         <label> Quantity:</label>
                         <select id="quantity-button">
@@ -66,13 +76,12 @@ class OrderIndexItem extends React.Component {
                             defaultValue={options[index]}
                         /> */}
                     </div>
+                    <div>
+                        <button onClick={this.handleDeleteClick}>
+                            Delete
+                        </button>
+                    </div>
                 </ul>
-                <div>
-                    <button onClick={this.handleSubmit}>
-                        Check Out
-                    </button>
-
-                </div>
             </div>
         )
     }
