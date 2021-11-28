@@ -18,7 +18,8 @@ class NavBar extends React.Component{
     handleSubmit(e){
         e.preventDefault()
         
-        this.props.demoLogin(this.props.demoUser).then(() => this.props.history.push('/'));
+        this.props.demoLogin(this.props.demoUser)
+        //.then(() => this.props.history.push('/'));
     }
     render(){
         const {currentUser, logout} = this.props

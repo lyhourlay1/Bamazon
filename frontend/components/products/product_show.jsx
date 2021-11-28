@@ -13,25 +13,29 @@ class ProductShow extends React.Component{
     }
 
     handleSubmit(e){
+        this.update()
         e.preventDefault()
-        debugger
         if(!this.props.currentUser){
             this.props.history.push('/login')
         }
         else{
+            
             this.props.createOrder(this.state).then(() => this.props.history.push('/carts/'))
         }
     }
-
-    update(field){
-        return (e)=> {
-            this.setState({[field]: e.target.value})
-        }
+    
+    update(){
+        // let e = document.getElementById("quantity-button")   
+        this.state.quantity = parseInt(document.getElementById("quantity-button").value)
+        this.state.cart_id = parseInt(this.props.order.cart_id)
+        this.state.product_name = this.props.product.product_name
     }
     render(){
         if(!this.props.product){
             return null
         }
+
+
         return(
             <div>
                 <div>
@@ -43,11 +47,11 @@ class ProductShow extends React.Component{
                 </div>
                 <div>
                     <label> Quantity:</label>
-                    <select name="quantity-button"  >
-                        <option value={1} onChange={this.update('quantity')}>1</option>
-                        <option value={2} onChange={this.update('quantity')} >2</option>
-                        <option value={3} onChange={this.update('quantity')}>3</option>
-                        <option value={4} onChange={this.update('quantity')} >4</option>
+                    <select id="quantity-button">
+                        <option value={1} >1</option>
+                        <option value={2}  >2</option>
+                        <option value={3} >3</option>
+                        <option value={4}  >4</option>
                     </select>
                     <button onClick={this.handleSubmit}>
                         Add to Cart
