@@ -6,5 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Product.destroy_all
+Order.destroy_all
+Cart.destroy_all
+
 demoUser = User.create({:username=> 'demo', :password=> 'password', :email=> 'email'})
 product1= Product.create({:product_name=> 'apple', :description=> 'fresh red apple', :price=>3, :quantity=>4, :seller_name=> 'MamaApple', :category=> 'food', :unit=>"per lb" })

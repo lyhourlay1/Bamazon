@@ -10,7 +10,9 @@ class NavBar extends React.Component{
         this.handleSubmit= this.handleSubmit.bind(this)
     }
     componentDidMount() {
-        this.props.fetchCart(this.props.currentUser.id)
+        if (this.props.currentUser){
+            this.props.fetchCart(this.props.currentUser.id)
+        }
     }
 
     handleSubmit(e){
@@ -50,7 +52,13 @@ class NavBar extends React.Component{
         
         return(
             <header className= 'nav-bar'>
-                <h1 className= 'logo'> Bamazon</h1>
+                <div className= 'logo'>
+                    <Link className="home-button" to={`/`}>
+                        <img src="images/bamazonLogo.png" className= 'bamazon-logo-home'
+                            
+                            height="60px"/>
+                    </Link>
+                </div>
                 <div>
                     <SearchBarContainer/>
                 </div>

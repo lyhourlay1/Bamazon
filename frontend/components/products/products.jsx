@@ -9,6 +9,7 @@ class Product extends React.Component{
         this.props.fetchProducts()
     }
     render(){
+        
         return(
             <div>
                 <ul>

@@ -1,7 +1,21 @@
 class Api::OrdersController < ApplicationController
     def index
-        user_id = current_user.id
-        @orders = Order.where(`cart_id = #{user_id}`)
+        
+        cartId = Cart.find_by(user_id: current_user.id)
+        orders = Order.where(`cart_id = #{cartId}`)
+        hash = {}
+        orders.each do |ele|
+            if hash[ele[:product_id]]
+                hash[ele[:product_id]][:quantity] +=  ele[:quantity] 
+            else
+                hash[ele[:product_id]] = ele
+            end
+        end
+        @orders =[]
+        hash.each do |key, value|
+            @orders.push(value)
+        end
+        
     end
 
     def show
@@ -38,7 +52,7 @@ class Api::OrdersController < ApplicationController
 
     private
     def order_params
-        params.require(:order).permit(:product_id, :cart_id, :quantity)
+        params.require(:order).permit(:product_id, :cart_id, :quantity, :product_name)
     end
 
 
