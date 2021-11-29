@@ -2,7 +2,6 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import OrderIndexItem from '../order/order_index_item'
-import OrderIndexItemContainer from '../order/order_index_item_container'
 
 class Cart extends React.Component{
     constructor(props){

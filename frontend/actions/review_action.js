@@ -1,24 +1,28 @@
 import * as ApiReviewUtil from "../util/review_utils";
 
-export const RECEIVE_ACTION = 'RECEIVE_ACTION'
-export const RECEIVE_ACTIONS = 'RECEIVE_ACTION'
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
+export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS'
 
-export const receiveActions = actions => ({
-    type: RECEIVE_ACTIONS,
-    actions,
+export const receiveReviews= reviews => ({
+    type: RECEIVE_REVIEWS,
+    reviews,
 })
 
-export const receiveAction = action => ({
-    type: RECEIVE_ACTION,
-    action,
+export const receiveReview = review => ({
+    type: RECEIVE_REVIEW,
+    review,
 })
 
-export const fetchReviews = () => dispatch => (
-    ApiReviewUtil.fetchReviews().then((reviews) => dispatch(fetchReviews(reviews)))
+export const fetchReviews = (product_id) => dispatch => (
+    ApiReviewUtil.fetchReviews(product_id).then((reviews) => dispatch(receiveReviews(reviews)))
 )
 
-export const fetchReview = (reviewId) => dispatch => (
-    ApiReviewUtil.fetchReview(reviewId).then((review => dispatch(fetchReview(review))))
+export const fetchReview = (product_id, reviewId) => dispatch => (
+    ApiReviewUtil.fetchReview(product_id, reviewId).then((review => dispatch(receiveReview(review))))
+)
+
+export const createReview = (review, product_id)=> dispatch =>(
+    ApiReviewUtil.createReview(review, product_id).then(review => dispatch(receiveReview(review)))
 )
 
  

@@ -19,16 +19,16 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
-        @reviews = Review.where(product_id= )
-
+        @reviews = Review.where(product_id: params[:product_id])
+        render :index
     end
 
     def show
-        @review = Review.find(params[:])
+        @review = Review.find(params[:id])
     end
 
     def update
-]       @review = Review.find(params[:id])
+       @review = Review.find(params[:id])
         if @review.update(review_params)
             render :show
         else

@@ -8,10 +8,10 @@ Rails.application.routes.draw do
       collection do
         get :search, to: "products#search", as: "search"
       end
+      resources :reviews, only:[:create, :index, :show, :update, :destroy, :update]
     end
     resources :carts, only:[:show, :create]
     resources :orders, only:[:create, :index, :show, :update, :destroy]
-    resources :reviews, only:[:create, :show, :update, :destroy, :update]
 
     
   end

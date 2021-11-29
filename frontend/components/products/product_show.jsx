@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar/nav_bar_container'
+import ReviewIndexItem from '../reviews/review_index_item'
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -9,7 +10,8 @@ class ProductShow extends React.Component{
         this.handleSubmit= this.handleSubmit.bind(this)
     }
     componentDidMount(){
-        this.props.fetchProduct(this.props.productId)
+        this.props.fetchProduct(this.props.productId);
+        this.props.fetchReviews(this.props.productId);
     }
 
     handleSubmit(e){
@@ -19,7 +21,6 @@ class ProductShow extends React.Component{
             this.props.history.push('/login')
         }
         else{
-            
             this.props.createOrder(this.state).then(() => this.props.history.push('/carts/'))
         }
     }
@@ -34,8 +35,8 @@ class ProductShow extends React.Component{
         if(!this.props.product){
             return null
         }
-
-
+        
+        console.log(this.props)
         return(
             <div>
                 <div>
@@ -56,6 +57,12 @@ class ProductShow extends React.Component{
                     <button onClick={this.handleSubmit}>
                         Add to Cart
                     </button>
+                </div>
+                <div>
+                    Reviews:
+                    <div>
+                        {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
+                    </div>
                 </div>
             </div>
         )
