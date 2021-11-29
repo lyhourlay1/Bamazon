@@ -9,7 +9,7 @@
 #
 class Cart < ApplicationRecord
 
-    validates :user_id,uniqueness:true
+    validates :user_id, uniqueness:true
     has_many :orders,
         primary_key: :id,
         foreign_key: :cart_id,

@@ -13,4 +13,10 @@
 #
 class Product < ApplicationRecord
     validates :product_name, :description, :price, :quantity, :seller_name, :unit, presence:true
+
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :product_id,
+        class_name: :Review
+
 end
