@@ -25,7 +25,7 @@ class Api::OrdersController < ApplicationController
     def create
         cartId = Cart.find_by(user_id: current_user.id)
         order = Order.new(order_params)
-        oldOrder= Order.where(product_id:`#{order.product_id}`, cart_id: `#{cartId}`)
+        oldOrder= Order.where(product_id: order.product_id, cart_id: cartId)
         
         if oldOrder.length!=0
             order = addOrder(order)
@@ -64,8 +64,9 @@ class Api::OrdersController < ApplicationController
     # end
 
     def destroy 
-        @order = Order.find(params[:id])
-        if @order.destroy
+        @orders = Order.where(id: params[:id])
+        
+        if @orders.destroy_all
             render :show
         else
             render json: @order.errors.full_messages, status: 422
