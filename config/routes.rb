@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     end
     resources :carts, only:[:show, :create]
     resources :orders, only:[:create, :index, :show, :update, :destroy]
+    resources :transactions, only:[:create, :index, :show]
 
-    
   end
 
   root to: "static_pages#root"
