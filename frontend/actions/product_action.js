@@ -21,6 +21,6 @@ export const fetchProduct = (productId) => dispatch=> (
     ApiProductUtil.fetchProduct(productId).then((product=> dispatch(receiveProduct(product))))
 )
 
-export const searchProducts = query => dispatch => (
-    ApiProductUtil.searchProducts(query).then(products => dispatch(receiveProducts(products)))
+export const fetchSearchProducts = query => dispatch => (
+    ApiProductUtil.fetchSearchProducts(query).then(products => dispatch(receiveProducts(products)))
 )

@@ -19,7 +19,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        
+        debugger
         query = params[:query].split(" ")
         @products=[]
         query.each do |keyWord|

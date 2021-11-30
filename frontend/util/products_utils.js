@@ -13,7 +13,7 @@ export const fetchProduct = productId=>(
     })
 )
 
-export const searchProducts = query => (
+export const fetchSearchProducts = query => (
     $.ajax({
         method: 'get',
         url: '/api/products/search',
