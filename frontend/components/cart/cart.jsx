@@ -26,7 +26,7 @@ class Cart extends React.Component{
 
     handleSubmitCheckOut(e){
         e.preventDefault()
-        
+        console.log(this.state)
         let orders = this.props.orders
         for(let i=0; i< orders.length; i++){
             this.update(orders[i])
@@ -72,7 +72,7 @@ class Cart extends React.Component{
 
 
                         {this.props.orders.map(order => <OrderIndexItem order={order} 
-                        key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder}/>)}
+                        key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
 
 
                         {/* history= {this.props.history}/>)} */}

@@ -19,7 +19,7 @@ class Api::OrdersController < ApplicationController
     end
 
     def show
-        @order = Post.find(params[:id])
+        @order = Order.find(params[:id])
     end
 
     def create
@@ -55,6 +55,7 @@ class Api::OrdersController < ApplicationController
 
 
     def update
+        
         @order = Order.find(params[:id])
         if @order.update(order_params)
             render :show

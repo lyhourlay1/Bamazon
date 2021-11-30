@@ -5,7 +5,6 @@ import { fetchReviews } from "../../actions/review_action"
 import ProductShow from "./product_show"
 
 const mSTP = (state, ownProps) => {
-    console.log(state)    
     return {
     currentUser: state.session.currentUser,
     product: state.entities.products[ownProps.match.params.productId],
