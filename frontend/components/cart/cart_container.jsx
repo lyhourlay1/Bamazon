@@ -2,6 +2,8 @@ import { connect } from "react-redux"
 import Cart from './cart'
 import { fetchCart } from "../../actions/cart_action"
 import { fetchOrders , deleteOrder} from "../../actions/order_action"
+import { createTransaction } from "../../actions/transaction_action"
+import { updateOrder } from "../../actions/order_action"
 
 const mSTP = (state, ownProps)=>{
     
@@ -15,7 +17,9 @@ const mSTP = (state, ownProps)=>{
 const mDTP = dispatch =>({
     // fetchCart: userId => dispatch(fetchCart(userId))
     fetchOrders: ()=> dispatch(fetchOrders()),
-    deleteOrder: orderId=> dispatch(deleteOrder(orderId))
+    deleteOrder: orderId=> dispatch(deleteOrder(orderId)),
+    createTransaction: transaction=>dispatch(createTransaction(transaction)),
+    updateOrder: order=> dispatch(updateOrder(order))
 })
 
 export default connect(mSTP, mDTP)(Cart)

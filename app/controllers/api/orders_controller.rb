@@ -54,14 +54,14 @@ class Api::OrdersController < ApplicationController
     end
 
 
-    # def update
-    #     @order = Order.find(params[:id])
-    #     if @order.update(order_params)
-    #         render :show
-    #     else
-    #         render json: @order.errors.full_messages, status: 422
-    #     end
-    # end
+    def update
+        @order = Order.find(params[:id])
+        if @order.update(order_params)
+            render :show
+        else
+            render json: @order.errors.full_messages, status: 422
+        end
+    end
 
     def destroy 
         @orders = Order.where(id: params[:id])

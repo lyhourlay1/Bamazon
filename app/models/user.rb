@@ -22,8 +22,15 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     has_one :cart,
+        primary_key: :id,
         foreign_key: :user_id,
         class_name: :Cart
+
+    has_many :transactions,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Transaction
+        
 
 
     def self.find_by_credentials(username, password)

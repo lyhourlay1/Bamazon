@@ -3,10 +3,12 @@ import productReducer from './products_reducer'
 import cartReducer from './cart_reducer'
 import orderReducer from './order_reducer'
 import reviewReducer from './review_reducer'
+import transactionReducer from './transaction_reducer'
 
 export default combineReducers({
     products: productReducer,
     reviews: reviewReducer,
     cart: cartReducer, 
-    orders: orderReducer
+    orders: orderReducer,
+    transactions: transactionReducer 
 })

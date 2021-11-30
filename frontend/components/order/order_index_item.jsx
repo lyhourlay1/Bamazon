@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Select from 'react-select'
 
 // const options =[
 //     {value: 1, label: '1'},
@@ -25,10 +24,12 @@ class OrderIndexItem extends React.Component {
 
     }
 
-    // update(){
-    //     this.state.quantity = parseInt(document.getElementById("quantity-button").value)
-    //     debugger
-    // }
+    update(field){
+        return (e) => {
+            this.setState({ [field]: e.target.value })
+            this.props.updateOrder(this.state)     
+        }
+    }
 
     handleSubmit(e){
         this.update()
@@ -65,16 +66,11 @@ class OrderIndexItem extends React.Component {
                     </Link>: 
                     <div>
                         <label> Quantity:</label>
-                        <select id="quantity-button">
+                        <select onChange={this.update('quantity')} value={this.state.quantity} id="quantity-button">
                             {options.map(option=> (
                                 option
                             ))}
                         </select>
-                        {/* <Select
-                            value={options.value}
-                            options={options}
-                            defaultValue={options[index]}
-                        /> */}
                     </div>
                     <div>
                         <button onClick={this.handleDeleteClick}>

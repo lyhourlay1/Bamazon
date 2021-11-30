@@ -35,8 +35,6 @@ class ProductShow extends React.Component{
         if(!this.props.product){
             return null
         }
-        
-        console.log(this.props)
         return(
             <div>
                 <div>

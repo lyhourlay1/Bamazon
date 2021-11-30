@@ -67,6 +67,11 @@ class NavBar extends React.Component{
                     {display}
                 </div>
                 <div>
+                    <Link className="orders-button" to={`/transactions/`}>
+                        Recent Orders
+                    </Link>
+                </div>
+                <div>
                     <Link className="cart-button" to={`/carts/`}> 
                        <img src="images/shop_cart.png" className='shopping-cart'/>
                     </Link>
