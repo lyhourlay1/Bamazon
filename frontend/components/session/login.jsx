@@ -40,7 +40,7 @@ class Login extends React.Component{
         return(
             <div className= 'session-form'>
                 <header>                        
-                    <Link className="home" to="/s">
+                    <Link className="home" to="/">
                         <img src="images/bamazon_Authlogo.png" className='amazon-logo'/>
                     </Link>
                 </header>

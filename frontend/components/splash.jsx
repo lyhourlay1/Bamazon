@@ -1,31 +1,33 @@
 import React from 'react'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import ProductContainer from  './products/product_container'
+import { fetchSearchProducts } from '../actions/product_action'
+import { Link } from 'react-router-dom'
+
 
 class Splash extends React.Component{
+
+
     render(){
     return (
         <div>
             <NavBarContainer/>
-            {/* <ProductContainer/> */}
             <div>
                 Today's Feature:
 
                 <ul>
                     <li>
-                        Food
+                        <Link className="food-category" to="/search/food">Food</Link>
                     </li>
                     <li>
-                        Electronics
+                        <Link className="electronics-category" to="/search/electronics">Electronics</Link>
                     </li>
                     <li>
-                        Clothes
+                        <Link className="clothes-category" to="/search/clothes">Clothes</Link>
                     </li>
                     <li>
-                        House Supplies
+                        <Link className="house-category" to="/search/house">House Supplies</Link>
                     </li>
-
-
                 </ul>
             </div>
         </div>
