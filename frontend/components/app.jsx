@@ -15,7 +15,7 @@ export default ()=> (
         <Switch>
             <AuthRoute path="/signup" component={SignupContainer}/>
             <AuthRoute path="/login" component={LoginContainer}/>
-            <ProtectedRoute exact path="/search/:query" component={ProductContainer} />
+            <Route exact path="/search/:query" component={ProductContainer} />
             <Route path="/products/:productId" component= {ProductShowContainer}/>
             <Route path="/reviewForm/:productId" component= {ReviewFormContainer}/>
             <ProtectedRoute path="/transactions/" component= {TransactionContainer}/>
