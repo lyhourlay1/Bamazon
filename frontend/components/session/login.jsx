@@ -44,7 +44,7 @@ class Login extends React.Component{
                         <img src="images/bamazon_Authlogo.png" className='amazon-logo'/>
                     </Link>
                 </header>
-                <h2>Log In!</h2>
+                <h2>Sign-In!</h2>
                 {this.renderErrors()}
                 <form >
                     <label>Username

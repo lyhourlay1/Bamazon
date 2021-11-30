@@ -38,7 +38,7 @@ class Cart extends React.Component{
 
     update(order){
         this.state.user_id= this.props.currentUser.id
-        this.state.product_id= order.id
+        this.state.product_id= order.product_id
         this.state.quantity= order.quantity
         this.state.product_name= order.product_name
         

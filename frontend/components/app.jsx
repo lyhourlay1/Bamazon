@@ -18,7 +18,7 @@ export default ()=> (
             <Route path="/products/:productId" component= {ProductShowContainer}/>
 
             <Route path="/reviewForm/:productId" component= {ReviewFormContainer}/>
-            <Route path="/transactions/" component= {TransactionContainer}/>
+            <ProtectedRoute path="/transactions/" component= {TransactionContainer}/>
             <Route path="/carts/" component= {CartContainer}/>
             <Route path="/" component={Splash} />
         </Switch>
