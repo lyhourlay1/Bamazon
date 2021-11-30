@@ -13,7 +13,8 @@ const orderReducer = (state = {}, action) => {
         case RECEIVE_ORDERS:
             return action.orders
         case REMOVE_ORDER:
-            return state
+            delete newState[action.orderId]
+            return newState
         default:
             return state;
     }

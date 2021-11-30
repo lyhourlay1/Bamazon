@@ -11,7 +11,7 @@ class SearchBar extends React.Component{
 
     handleSubmit(e){
         e.preventDefault()
-        this.props.searchProducts(this.state.query)
+        this.props.fetchSearchProducts(this.state.query)
         .then(()=> this.props.history.push(`/search/${this.state.query}`))
     }
     update(field) {

@@ -2,7 +2,7 @@ class Api::OrdersController < ApplicationController
     def index
         
         cartId = Cart.find_by(user_id: current_user.id)
-        @orders = Order.where(`cart_id = #{cartId}`)
+        @orders = Order.where(cart_id: cartId)
         # hash = {}
         # orders.each do |ele|
         #     if hash[ele[:product_id]]
@@ -48,7 +48,8 @@ class Api::OrdersController < ApplicationController
 
     def addOrder(newOrder)
         cartId = Cart.find_by(user_id: current_user.id)
-        orders = Order.where(`product_id=#{newOrder.product_id} AND cart_id = #{cartId}`)
+        orders =Order.where(product_id: newOrder.product_id, cart_id: cartId)
+        # orders = Order.where(`product_id=#{newOrder.product_id} AND cart_id = #{cartId}`)
         orders[0].quantity += newOrder.quantity
         return orders[0]
     end
@@ -68,7 +69,9 @@ class Api::OrdersController < ApplicationController
         @orders = Order.where(id: params[:id])
         
         if @orders.destroy_all
-            render :show
+            # render :show
+            @orders = Order.all
+            render :index
         else
             render json: @order.errors.full_messages, status: 422
         end

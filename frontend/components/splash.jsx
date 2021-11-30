@@ -7,7 +7,7 @@ class Splash extends React.Component{
     return (
         <div>
             <NavBarContainer/>
-            <ProductContainer/>
+            {/* <ProductContainer/> */}
         </div>
         )
     }

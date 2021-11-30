@@ -26,7 +26,7 @@ class OrderIndexItem extends React.Component {
         return (e) => {
             this.setState({ [field]: e.target.value }, ()=>{
                 this.props.updateOrder(this.state)
-                .then(window.location.reload())
+                // .then(window.location.reload())
                 // console.log(this.state)
             })
         }
@@ -50,7 +50,8 @@ class OrderIndexItem extends React.Component {
 
     handleDeleteClick(e) {
         e.preventDefault()
-        this.props.deleteOrder(this.state.id).then(window.location.reload())
+        this.props.deleteOrder(this.state.id)
+        //.then(window.location.reload())
         //.then(() => this.props.history.push('/carts/'))
     }
     
@@ -68,7 +69,7 @@ class OrderIndexItem extends React.Component {
         let options=[]
         for (let i = 1; i < this.props.order.quantity+ 5; i++) {
             if (i === this.props.order.quantity) {
-                options.push(<option value={i} key={i} selected>{i}</option>)
+                options.push(<option value={i} key={i} defaultValue>{i}</option>)
             }else{
                 options.push(<option value={i} key={i}>{i}</option>)
             }

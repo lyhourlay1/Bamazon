@@ -19,14 +19,19 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        debugger
+        
         query = params[:query].split(" ")
-        @products=[]
-        query.each do |keyWord|
-            Product.all.each do |product|
-                if product.product_name.includes?(keyWord) && !@products.include?(product)
-                    @products.push(product)
-                end
+        if query.length <1
+            @products = Product.all
+        else
+            firstWord = query[0]
+            @products=  Product.where("product_name ilike ? or 
+                category ilike ? or description ilike ? or seller_name ilike ?", 
+                "%#{firstWord}%",  "%#{firstWord}%",  "%#{firstWord}%", "%#{firstWord}%")
+            query[1..-1].each do |keyWord|
+                @products = @products.or(Product.where("product_name ilike ? or 
+                category ilike ? or description ilike ? or seller_name ilike ?", 
+                "%#{keyWord}%",  "%#{keyWord}%",  "%#{keyWord}%", "%#{keyWord}%"))
             end
         end
         if @products.length > 0
