@@ -8,6 +8,26 @@ class Splash extends React.Component{
         <div>
             <NavBarContainer/>
             {/* <ProductContainer/> */}
+            <div>
+                Today's Feature:
+
+                <ul>
+                    <li>
+                        Food
+                    </li>
+                    <li>
+                        Electronics
+                    </li>
+                    <li>
+                        Clothes
+                    </li>
+                    <li>
+                        House Supplies
+                    </li>
+
+
+                </ul>
+            </div>
         </div>
         )
     }
