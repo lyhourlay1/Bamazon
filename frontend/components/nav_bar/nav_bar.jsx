@@ -44,7 +44,7 @@ class NavBar extends React.Component{
                     </div>
                     <div>
                         <button className='demo-sign-in' onClick={ this.handleSubmit}>
-                            demo Sign-in
+                            Demo Sign-in
                         </button>
                     </div>
                 </div>
@@ -57,21 +57,21 @@ class NavBar extends React.Component{
                     <Link className="home-button" to={`/`}>
                         <img src="images/bamazonLogo.png" className= 'bamazon-logo-home'
                             
-                            height="60px"/>
+                            height="45px"/>
                     </Link>
                 </div>
-                <div>
+                <div className= 'search-bar'>
                     <SearchBarContainer/>
                 </div>
                 <div className ='display-wrapper'>
                     {display}
                 </div>
-                <div>
+                <div className= 'recent-order'>
                     <Link className="orders-button" to={`/transactions/`}>
                         Recent Orders
                     </Link>
                 </div>
-                <div>
+                <div className='cart'>
                     <Link className="cart-button" to={`/carts/`}> 
                        <img src="images/shop_cart.png" className='shopping-cart'/>
                     </Link>

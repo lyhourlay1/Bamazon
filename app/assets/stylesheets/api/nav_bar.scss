@@ -1,4 +1,40 @@
+
+header.nav-bar{
+     background-color:black;
+     color: white;
+     margin: 0px;
+     display: flex;
+ }
+
+ .cart, .recent-order, .search-bar, .display-wrapper, .logo{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding-right: 40px;
+ }
+
+.formSearch{
+    display: flex;
+} 
+.search-box{
+    width: 450px;
+    height: 37px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.search-button{
+    display: flex;
+    border-radius: 5px;
+    width: 40px;
+}
+img.search-icon{
+    width: 28px;
+    height: 28px;
+}
+
 .shopping-cart{
-    height: 40%;
-    width: 2%;
+    height: 20px;
+    width: 20px;
+    align-items: right;
 }
