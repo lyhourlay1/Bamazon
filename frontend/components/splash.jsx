@@ -13,7 +13,7 @@ class Splash extends React.Component{
         <div>
             <NavBarContainer/>
             <div>
-                Today's Feature:
+                Today's Features:
 
                 <ul>
                     <li>

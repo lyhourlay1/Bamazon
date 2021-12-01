@@ -35,6 +35,7 @@ class ProductShow extends React.Component{
         if(!this.props.product){
             return null
         }
+        
         return(
             <div>
                 <div>
@@ -43,6 +44,11 @@ class ProductShow extends React.Component{
 
                 <div>
                     {this.props.product.product_name}: {this.props.product.description} 
+                </div>
+                <div>
+                    {this.props.product.photoUrls.map(url=> 
+                        <img src={url} />                        
+                        )}
                 </div>
                 <div>
                     <label> Quantity:</label>

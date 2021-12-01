@@ -19,4 +19,6 @@ class Product < ApplicationRecord
         foreign_key: :product_id,
         class_name: :Review
 
+    has_many_attached :photos
+
 end
