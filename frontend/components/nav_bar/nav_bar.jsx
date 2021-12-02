@@ -3,6 +3,7 @@ import { createNewUser } from '../../actions/session_action'
 import { Link } from 'react-router-dom';
 import SearchBarContainer from '../search_bar/search_bar_container';
 import CartContainer from '../cart/cart_container'
+import Category from '../category';
 
 class NavBar extends React.Component{
     constructor(props){
@@ -52,31 +53,38 @@ class NavBar extends React.Component{
         );
         
         return(
-            <header className= 'nav-bar'>
-                <div className= 'logo'>
-                    <Link className="home-button" to={`/`}>
-                        <img src="images/bamazonLogo.png" className= 'bamazon-logo-home'
-                            
-                            height="45px"/>
-                    </Link>
-                </div>
-                <div className= 'search-bar'>
-                    <SearchBarContainer/>
-                </div>
-                <div className ='display-wrapper'>
-                    {display}
-                </div>
-                <div className= 'recent-order'>
-                    <Link className="orders-button" to={`/transactions/`}>
-                        Recent Orders
-                    </Link>
-                </div>
-                <div className='cart'>
-                    <Link className="cart-button" to={`/carts/`}> 
-                       <img src="images/shop_cart.png" className='shopping-cart'/>
-                    </Link>
-                </div>
-            </header>
+            <div className='header'>
+
+                <header className= 'nav-bar'>
+                    <div className= 'logo'>
+                        <Link className="home-button" to={`/`}>
+                            <img src="images/bamazonLogo.png" className= 'bamazon-logo-home'   
+                                height="45px"/>
+                        </Link>
+                    </div>
+                    {/* <div className= 'search-bar'> */}
+                        <SearchBarContainer/>
+                    {/* </div> */}
+                    <div className='right-flex'>
+                        <div className ='display-wrapper'>
+                            {display}
+                        </div>
+                        <div className= 'recent-order'>
+                            <Link className="orders-button" to={`/transactions/`}>
+                                Recent Orders
+                            </Link>
+                        </div>
+                        <div className='cart'>
+                            <Link className="cart-button" to={`/carts/`}> 
+                            <img src="images/shop_cart.png" className='shopping-cart'/>
+                            </Link>
+                        </div>
+                    </div>
+                </header>
+                <header className='category-nav-bar'>
+                    <Category/>
+                </header>
+            </div>
         )
     }
 }

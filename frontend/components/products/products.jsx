@@ -15,9 +15,10 @@ class Product extends React.Component{
             <div>
                 <NavBarContainer />
 
-                <ul>
+                <div className='products-flex'>
                     {this.props.products.map(product => <ProductIndexItem product={product} key = {product.id} />)}
-                </ul>
+                </div>
+           
             </div>
         )
     }

@@ -12,23 +12,76 @@ class Splash extends React.Component{
     return (
         <div>
             <NavBarContainer/>
-            <div>
-                Today's Features:
 
-                <ul>
+            <div className='home-container'>
+                <div className='splash-background'>
+                    <img src="images/splashpic.jpeg" className='home-img' />
+                </div>
+
+
+        
+
+                {/* <ul>
                     <li>
-                        <Link className="food-category" to="/search/food">Food</Link>
+                    <Link className="food-category" to="/search/food">Food</Link>
                     </li>
                     <li>
-                        <Link className="electronics-category" to="/search/electronics">Electronics</Link>
+                    <Link className="electronics-category" to="/search/electronics">Electronics</Link>
                     </li>
                     <li>
-                        <Link className="clothes-category" to="/search/clothes">Clothes</Link>
+                    <Link className="clothes-category" to="/search/clothes">Clothes</Link>
                     </li>
                     <li>
-                        <Link className="house-category" to="/search/house">House Supplies</Link>
+                    <Link className="house-category" to="/search/house">House Supplies</Link>
                     </li>
-                </ul>
+                </ul> */}
+                {/* <div className='features'>
+                    <div className='text-feature'>
+                        Today's Features:
+                    </div>
+                </div> */}
+                <div className='row-home'>
+                    <div className='category-display' id='one'>
+                        <Link className="food-category" to="/search/food">
+                            <h1>Food</h1>
+                            <img src="/images/food_category.png" width="600px"/>
+                        </Link>    
+                    </div>
+                    <div className='category-display' id='one'>
+                            <Link className="clothes-category" to="/search/clothes">
+                                <h1>Clothes</h1>
+                                <img src="/images/clothes_category.png" width="500px" />
+                            </Link>
+                    </div>
+
+                </div>
+                <div className='row-home' >
+                    <div className='category-display' id='two'>
+                
+                        <Link className="electronics-category" to="/search/electronics">
+                            <h1>
+                                Electronics
+                            </h1>
+                            <img src="/images/electronics_category.png" width="300px" className='electronics-image' />
+                        </Link>
+                    </div>
+                    <div className='category-display' id='two'>
+                        <Link className="house-category" to="/search/house">
+                            <h1>
+                                House Supplies
+                            </h1>
+                            <img src="/images/house_supplies.png" width="200px" className='house-supplies-image' />
+                        </Link>
+                    </div>
+                    <div className='category-display' id='two'>
+                        <Link className="music-category" to="/search/music">                            
+                        <h1>
+                            Music
+                        </h1>
+                            <img src="/images/music_category.png" width="300px" className='music-image' />
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
         )

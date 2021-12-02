@@ -22,8 +22,8 @@ class SearchBar extends React.Component{
 
     render(){    
         return (
-            <div>
-                <form class='formSearch'>
+            <div className= 'search-bar'>
+                <form className='formSearch'>
                     <input type="search" onChange={this.update('query')} className='search-box'/>
                     <button onClick={this.handleSubmit} className='search-button'>
                         <img src="images/searchBar.jpeg" className= 'search-icon'/>

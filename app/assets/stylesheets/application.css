@@ -126,3 +126,8 @@ button:hover{
 .session-form{
   text-align: center;
 } */
+
+ a, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
