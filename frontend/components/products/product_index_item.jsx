@@ -6,8 +6,17 @@ class ProductIndexItem extends React.Component{
         
         return(
             <div className='product-flex' > 
-                <Link to={`/products/${this.props.product.id}`}> {this.props.product.product_name}</Link>
-                
+                <div>
+                    <Link to={`/products/${this.props.product.id}`}> 
+                        <h2 className= 'product-name'>
+                            {this.props.product.product_name}
+                        </h2>
+                        <h3 className= 'product- price'>
+                            $ {this.props.product.price}
+                        </h3>
+                        <img src={this.props.product.photoUrls[0]} height='180px' />
+                    </Link> 
+                </div>
             </div>
         )
     }

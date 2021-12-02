@@ -18,28 +18,6 @@ class Splash extends React.Component{
                     <img src="images/splashpic.jpeg" className='home-img' />
                 </div>
 
-
-        
-
-                {/* <ul>
-                    <li>
-                    <Link className="food-category" to="/search/food">Food</Link>
-                    </li>
-                    <li>
-                    <Link className="electronics-category" to="/search/electronics">Electronics</Link>
-                    </li>
-                    <li>
-                    <Link className="clothes-category" to="/search/clothes">Clothes</Link>
-                    </li>
-                    <li>
-                    <Link className="house-category" to="/search/house">House Supplies</Link>
-                    </li>
-                </ul> */}
-                {/* <div className='features'>
-                    <div className='text-feature'>
-                        Today's Features:
-                    </div>
-                </div> */}
                 <div className='row-home'>
                     <div className='category-display' id='one'>
                         <Link className="food-category" to="/search/food">

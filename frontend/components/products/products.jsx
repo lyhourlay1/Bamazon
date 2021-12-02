@@ -10,7 +10,8 @@ class Product extends React.Component{
     componentDidMount(){
         this.props.fetchSearchProducts(this.props.query)
     }
-    render(){
+
+    render(){   
         return(
             <div>
                 <NavBarContainer />

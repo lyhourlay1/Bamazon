@@ -41,28 +41,37 @@ class ProductShow extends React.Component{
                 <div>
                     <NavBarContainer/>
                 </div>
-
-                <div>
-                    {this.props.product.product_name}: {this.props.product.description} 
+                <div className= 'product-show-flex'>
+                    <div className='product-show-image'>
+                        {this.props.product.photoUrls.map(url=> 
+                            <img src={url} height='380px'/>                        
+                            )}
+                    </div>
+                    <div className='details' >
+                        <h2 className='product-show-name' id='row'>
+                            {this.props.product.product_name}: 
+                        </h2>
+                        <h2 className='static-description' id='row'>
+                            About this item 
+                        </h2>
+                        <h2 className='product-show-description' id='row'>
+                            {this.props.product.description} 
+                        </h2>
+                    </div>
+                    <div className='add-to-cart'>
+                        <label> Quantity:</label>
+                        <select id="quantity-button">
+                            <option value={1} >1</option>
+                            <option value={2}  >2</option>
+                            <option value={3} >3</option>
+                            <option value={4}  >4</option>
+                        </select>
+                        <button onClick={this.handleSubmit}>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    {this.props.product.photoUrls.map(url=> 
-                        <img src={url} />                        
-                        )}
-                </div>
-                <div>
-                    <label> Quantity:</label>
-                    <select id="quantity-button">
-                        <option value={1} >1</option>
-                        <option value={2}  >2</option>
-                        <option value={3} >3</option>
-                        <option value={4}  >4</option>
-                    </select>
-                    <button onClick={this.handleSubmit}>
-                        Add to Cart
-                    </button>
-                </div>
-                <div>
+                <div className='product-show-review'>
                     Reviews:
                     <div>
                         {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
