@@ -14,9 +14,9 @@ class Transaction extends React.Component{
                 <div>
                     <NavBarContainer/>
                 </div>
-                <ul>
+                <div className='transaction-flex'>
                     {this.props.transactions.map(transaction=> <TransactionIndexItem transaction={transaction} key={transaction.id}/>)}
-                </ul>
+                </div>
 
             </div>
         )

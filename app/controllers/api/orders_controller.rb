@@ -5,12 +5,7 @@ class Api::OrdersController < ApplicationController
         @products = []
         @orders.each do |ele|
             @products.push(Product.find_by(id: ele.product_id))
-            # hash{}
-            # if hash[ele[:product_id]]
-            #     hash[ele[:product_id]][:quantity] +=  ele[:quantity] 
-            # else
-            #     hash[ele[:product_id]] = ele
-            # end
+
         end
         
 
@@ -22,6 +17,8 @@ class Api::OrdersController < ApplicationController
 
     def show
         @order = Order.find(params[:id])
+        @product = Product.find(@order.product_id)
+        debugger
     end
 
     def create
@@ -33,6 +30,7 @@ class Api::OrdersController < ApplicationController
             order = addOrder(order)
             @order = Order.find(oldOrder[0].id)
             if @order.update(quantity: order.quantity)
+                @product = Product.find(@order.product_id)
                 render :show
             else
                 render json: @order.errors.full_messages, status: 422
@@ -40,6 +38,7 @@ class Api::OrdersController < ApplicationController
         else
             @order = order
             if @order.save
+                @product = Product.find(@order.product_id)
                 render :show
             else
                 render json: @order.errors.full_messages, status: 422
@@ -73,6 +72,10 @@ class Api::OrdersController < ApplicationController
         if @orders.destroy_all
             # render :show
             @orders = Order.all
+            @products = []
+            @orders.each do |ele|
+                @products.push(Product.find_by(id: ele.product_id))
+            end            
             render :index
         else
             render json: @order.errors.full_messages, status: 422

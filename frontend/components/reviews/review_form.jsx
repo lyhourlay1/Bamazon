@@ -1,5 +1,7 @@
 import React from 'react'
 // import Select from 'react-select'
+import NavBarContainer from '../nav_bar/nav_bar_container'
+
 
 const options =[
     {value: 1, label: '1'},
@@ -60,36 +62,55 @@ class ReviewForm extends React.Component{
         return(
             <div>
                 <div>
-                    Create Review for {this.props.product.product_name}
+                    <NavBarContainer/>
                 </div>
-                {this.renderErrors()}
-                <form>
-                    <label>Rating:
-                        <div>
-                            <select onChange={this.update('rating')} value={this.state.rating}>
-                                <option value={1} >1</option>
-                                <option value={2}>2</option>
-                                <option value={3}>3</option>
-                                <option value={4}>4</option>
-                                <option value={5}>5</option>
-                            </select>
+                <div className='review-flex-container'>
+                    <div className ='review-form-container'>
+                        <div className='review-header'>
+                            Create Review for {this.props.product.product_name}
                         </div>
-                    </label>
+                        <div>
+                            {this.renderErrors()}
+                        </div>
+                        <div>
+                            <form>
+                                <div>
+                                    Overall Rating:
+                                    <div>
+                                        <select onChange={this.update('rating')} value={this.state.rating}>
+                                            <option value={1} >1</option>
+                                            <option value={2}>2</option>
+                                            <option value={3}>3</option>
+                                            <option value={4}>4</option>
+                                            <option value={5}>5</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                    <label>Headline
-                        <input type="text" value={this.state.headline} onChange={this.update('headline')} />
-                    </label>
+                                <div>
+                                    <div>
+                                        Add a Headline
+                                    </div>
+                                    <input type="text" value={this.state.headline} onChange={this.update('headline')} id='text-box'/>
+                                </div>
+                                <div>
+                                    <div>
+                                        Written Review
+                                    </div>
+                                    <textarea name="comment" cols="30" rows="10" value={this.state.comment} onChange={this.update('comment')} id='text-box-area'> </textarea>
+                                </div>
 
-                    <label>Written Review
-                        <textarea name="comment" cols="30" rows="10" value={this.state.comment} onChange={this.update('comment')}> </textarea>
-                    </label>
+                                <div className='review-submit-butt'>
+                                    <button onClick={this.handleSubmitReview}>
+                                        Submit
+                                    </button>
 
+                                </div>
 
-                    <button onClick={this.handleSubmitReview}>
-                        Submit
-                    </button>
-
-                </form>
+                            </form>
+                        </div>
+                    </div>                
+                </div>
             </div>
         )
     }

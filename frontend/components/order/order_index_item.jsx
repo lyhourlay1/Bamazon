@@ -43,20 +43,23 @@ class OrderIndexItem extends React.Component {
                         <img src={this.props.order.photoUrls[0]} height='180px' />
                     </Link>
                 </div>
-                <div className='order-col'>
+                <div className='order-col-details'>
+                    
                     <div>
-                        <Link to={`/products/${this.props.order.product_id}`}> 
-                            {this.props.order.product_name}
-                        </Link>: 
-                    </div>
-                    <div className='additional-actions'>
-                        <label> Quantity:</label>
-                        <select onChange={this.update('quantity')} value={this.state.quantity} id="quantity-button">            
-                            {options.map(option=> (option))}
-                        </select>
-                        <button onClick={this.handleDeleteClick}>
-                            Delete
-                        </button>
+                        <div className='cart-product-name'>
+                            <Link to={`/products/${this.props.order.product_id}`}> 
+                                {this.props.order.product_name}
+                            </Link>: 
+                        </div>
+                        <div className='additional-actions'>
+                            <label> Quantity:</label>
+                            <select onChange={this.update('quantity')} value={this.state.quantity} id="quantity-button">            
+                                {options.map(option=> (option))}
+                            </select>
+                            <button onClick={this.handleDeleteClick}>
+                                Delete
+                            </button>
+                        </div>
                     </div>
                     <div className='item-price'>
                         $ {this.props.order.price}

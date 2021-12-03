@@ -13,6 +13,7 @@ class Cart extends React.Component{
             product_name: ""
         }
         this.handleSubmitCheckOut = this.handleSubmitCheckOut.bind(this)
+        // this.caluculateTotal = this.caluculateTotal.bind(this)
 
     }
 
@@ -22,6 +23,7 @@ class Cart extends React.Component{
 
     componentDidMount(){
         this.props.fetchOrders()
+
     }
 
     handleSubmitCheckOut(e){
@@ -33,7 +35,6 @@ class Cart extends React.Component{
             this.props.deleteOrder(orders[i].id)
             this.props.createTransaction(this.state)
         }
-        window.location.reload()
     }
 
     update(order){
@@ -42,8 +43,20 @@ class Cart extends React.Component{
         this.state.quantity= order.quantity
         this.state.product_name= order.product_name
     }
+    calculateTotal(arr){
+        
+        let total = 0
+        for(let i=0; i<arr.length; i++){
+            total += arr[i]
+        }
+        return total;
+    }
 
-    render(){   
+    render(){ 
+        let display = 0
+        if(this.props.orders.length!==0){
+            display = this.calculateTotal(this.props.orders.map(order => order.quantity * order.price))
+        }
         return(
             <div className='cart-page'>
                 <div>
@@ -60,8 +73,14 @@ class Cart extends React.Component{
                             {this.props.orders.map(order => <OrderIndexItem order={order} 
                             key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
                         </div>
+                        <div className='total-col1'>
+                            Total: {display}
+                        </div>
                     </div>
                     <div className='col2'>
+                        <div className='total-col2'>
+                            Total: {display}
+                        </div>
                         <button onClick={this.handleSubmitCheckOut} className='checkout-button'>
                             Check Out
                         </button>

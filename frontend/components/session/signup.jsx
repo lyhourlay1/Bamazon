@@ -39,7 +39,7 @@ class Signup extends React.Component{
     render(){
         return (
             <div className = "session-form">
-                <Link className="home" to="/s">
+                <Link className="home" to="/">
                     <img src="images/bamazon_Authlogo.png" className='amazon-logo' />
                 </Link>
                 <div className='auth-container'>

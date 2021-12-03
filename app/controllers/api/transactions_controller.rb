@@ -12,6 +12,11 @@ class Api::TransactionsController < ApplicationController
     def index
         user = current_user
         @transactions = Transaction.where(user_id: user.id)
+        @products = []
+
+        @transactions.each do |ele|
+                @products.push(Product.find_by(id: ele.product_id))
+            end  
         render :index
     end
 
