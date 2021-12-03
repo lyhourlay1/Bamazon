@@ -2,16 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// .products-flex{
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .product-flex{
+//     display: flex;
+//     width: 250px;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//     margin-top: 35px;
+//     margin-left: 20;
+// }
+
 .products-flex{
+    width: 1500px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px 10% 50px 10%;
+}
+    
+.products-flex>* {
+    flex: 0 0 25%;
+    height: 300px;
+    padding: 30px;
 }
 
-.product-flex{
-    display: flex;
-    width: 250px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 35px;
-    margin-left: 20;
+.product-image{
+    padding: 10px 10px 10px 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }

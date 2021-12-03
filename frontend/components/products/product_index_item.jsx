@@ -14,7 +14,10 @@ class ProductIndexItem extends React.Component{
                         <h3 className= 'product- price'>
                             $ {this.props.product.price}
                         </h3>
-                        <img src={this.props.product.photoUrls[0]} height='180px' />
+                        <div className='product-image'>
+                            <img src={this.props.product.photoUrls[0]} height='180px' />
+
+                        </div>
                     </Link> 
                 </div>
             </div>
