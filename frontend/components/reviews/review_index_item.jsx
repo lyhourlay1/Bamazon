@@ -6,9 +6,19 @@ class ReviewIndexItem extends React.Component {
         
         return (
             <div>
-                <ul>
+                <div className='review-author'>
+                    By: 
+                </div>
+                <div className='review-rating'>
+                    Rating: {this.props.review.rating} Stars
+                </div>
+                <div className= 'review-headline'>
                     {this.props.review.headline}
-                </ul>
+                </div>
+                <div className='review-description'>
+                    {this.props.review.description}
+                </div>
+                
             </div>
         )
     }

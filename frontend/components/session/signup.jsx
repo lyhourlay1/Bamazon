@@ -39,30 +39,36 @@ class Signup extends React.Component{
     render(){
         return (
             <div className = "session-form">
-                <header>
-                    <Link className="home" to="/s">
-                        <img src="images/bamazon_Authlogo.png" className='amazon-logo' />
-                    </Link>
-                </header>
-                <h2>Sign Up!</h2>
-                {this.renderErrors()}
-                <form >
-                    <label>Username
-                        <input type="text" value={this.state.username} onChange= {this.update('username')}/>
-                    </label>
-                    <br />
-                    <label>Email
-                        <input type="text" value={this.state.email} onChange= {this.update('email')}/>
-                    </label>
-                    <br />
-                    <label>Password
-                        <input type="password" value={this.state.password} onChange= {this.update('password')}/>
-                    </label>
-                    <button onClick={this.handleSubmit}>Sign Up</button>
-                </form>
-                <div>
-                    Already have an account? 
-                    <Link className="btn" to="/login"> Sign-in</Link>               
+                <Link className="home" to="/s">
+                    <img src="images/bamazon_Authlogo.png" className='amazon-logo' />
+                </Link>
+                <div className='auth-container'>
+                    <h2 className='padding' id='auth-heading'>Sign Up!</h2>
+                    <h2 className='padding'>
+                        {this.renderErrors()}
+                    </h2>
+                    <form >
+                        <div className='padding'>
+                            <h4>Username</h4>
+                            <input type="text" value={this.state.username} onChange={this.update('username')} id='input-box'/>
+                        </div>
+                        <div className='padding'>
+                            <h4>Email</h4>
+                            <input type="text" value={this.state.email} onChange={this.update('email')} id='input-box'/>
+                        </div>
+                         <div className='padding'>
+                            <h4>Password</h4>
+                            <input type="password" value={this.state.password} onChange={this.update('password')} id='input-box'/>
+                        </div>
+                        <div className='padding'>
+                            <button onClick={this.handleSubmit}>Sign Up</button>
+                        </div>
+                    </form>
+                    <p className='padding'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
+                    <div className='padding'>
+                        Already have an account? 
+                        <Link className="sign-in0link" to="/login" className='underscore'> Sign-in</Link>               
+                    </div>
                 </div>
             </div>
         )

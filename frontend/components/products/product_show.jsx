@@ -50,6 +50,9 @@ class ProductShow extends React.Component{
                     <div className='details' >
                         <h2 className='product-show-name' id='row'>
                             {this.props.product.product_name}: 
+                            <div className='show-price'>
+                                Now: ${this.props.product.price}
+                            </div>
                         </h2>
                         <h2 className='static-description' id='row'>
                             About this item 
@@ -59,21 +62,49 @@ class ProductShow extends React.Component{
                         </h2>
                     </div>
                     <div className='add-to-cart'>
-                        <label> Quantity:</label>
-                        <select id="quantity-button">
-                            <option value={1} >1</option>
-                            <option value={2}  >2</option>
-                            <option value={3} >3</option>
-                            <option value={4}  >4</option>
-                        </select>
-                        <button onClick={this.handleSubmit}>
-                            Add to Cart
-                        </button>
+                        <div className='show-price'>
+                            ${this.props.product.price}
+                        </div>  
+                        <h3 className='static-stock'>
+                            In Stock Now
+                        </h3>
+
+                        <h3 className ='static-order'>
+                            Order it now.
+                        </h3>
+                        <div className='static-quantity'>
+                            <label> Quantity: </label>
+                            <select id="quantity-button">
+                                <option value={1} >1</option>
+                                <option value={2}  >2</option>
+                                <option value={3} >3</option>
+                                <option value={4}  >4</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button onClick={this.handleSubmit} className='add-to-cart-button'>
+                                Add to Cart
+                            </button>
+                        </div>
+                        <div className='static-ship-sold'>
+                            <div className='static-padding'>
+                                Ships from   
+                                <br />
+                                Sold by   
+                            </div>
+                            <div>
+                                Amazon.com  
+                                <br />
+                                {this.props.product.seller_name}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className='product-show-review'>
-                    Reviews:
-                    <div>
+                    <div className='review-heading'>
+                        Top reviews from the United States
+                    </div>
+                    <div className='show-reviews'>
                         {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
                     </div>
                 </div>

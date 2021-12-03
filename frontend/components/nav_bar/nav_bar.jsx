@@ -2,8 +2,8 @@ import React from 'react'
 import { createNewUser } from '../../actions/session_action'
 import { Link } from 'react-router-dom';
 import SearchBarContainer from '../search_bar/search_bar_container';
-import CartContainer from '../cart/cart_container'
-import Category from '../category';
+// import CartContainer from '../cart/cart_container'
+import CategoryContainer from '../category/category_container';
 
 class NavBar extends React.Component{
     constructor(props){
@@ -82,7 +82,7 @@ class NavBar extends React.Component{
                     </div>
                 </header>
                 <header className='category-nav-bar'>
-                    <Category/>
+                    <CategoryContainer/>
                 </header>
             </div>
         )

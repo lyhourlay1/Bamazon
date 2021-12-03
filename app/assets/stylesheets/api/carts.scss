@@ -1,3 +1,17 @@
 // Place all the styles related to the api::carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cart-username{
+    font-size:20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.cart-flex-container{
+    display: flex;
+    justify-content: center;
+    background-color:#eaeded;
+    width: 1525px ;
+    height: 1500px;
+
+}

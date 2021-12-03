@@ -41,47 +41,30 @@ class Cart extends React.Component{
         this.state.product_id= order.product_id
         this.state.quantity= order.quantity
         this.state.product_name= order.product_name
-        
-        // this.setState({user_id: `${this.props.currentUser.id}`, 
-        //     product_id: {order.product_id}, product_name: order.product_name, 
-        //     quantity: order.quantity})
     }
 
-    render(){
-        
-        // if (this.props.orders.length ===0) {
-        //     const display = 
-        //     <div>
-        //         The Cart is empty.
-        //     </div>
-        // }else{
-        //     const display=
-        //     <div>
-        //         { this.props.currentUser.username } 's cart:
-        //     </div>
-        // }            
+    render(){       
         return(
             <div>
                 <div>
                     <NavBarContainer/>
                 </div>
-                <div>
-                    {this.props.currentUser.username} 's cart:
-                    <ul>
-                        {/* {this.props.orders.map(order => <OrderIndexItemContainer order={order} key={order.id}/>)} */}
+                <div className='cart-flex-container' >
+                    <div className='col'>
 
-
-                        {this.props.orders.map(order => <OrderIndexItem order={order} 
-                        key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
-
-
-                        {/* history= {this.props.history}/>)} */}
-                    </ul>
-                </div>
-                <div>
-                    <button onClick={this.handleSubmitCheckOut}>
-                        Check Out
-                    </button>
+                        <h1 className='cart-username'>
+                            {this.props.currentUser.username}'s cart:
+                        </h1>
+                        <ul>
+                            {this.props.orders.map(order => <OrderIndexItem order={order} 
+                            key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
+                        </ul>
+                    </div>
+                    <div className='col'>
+                        <button onClick={this.handleSubmitCheckOut}>
+                            Check Out
+                        </button>
+                    </div>
                 </div>
             </div>
         )
