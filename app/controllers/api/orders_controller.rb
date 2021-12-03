@@ -1,17 +1,19 @@
 class Api::OrdersController < ApplicationController
     def index
-        
         cartId = Cart.find_by(user_id: current_user.id)
         @orders = Order.where(cart_id: cartId)
-        # hash = {}
-        # orders.each do |ele|
-        #     if hash[ele[:product_id]]
-        #         hash[ele[:product_id]][:quantity] +=  ele[:quantity] 
-        #     else
-        #         hash[ele[:product_id]] = ele
-        #     end
-        # end
-        # @orders =[]
+        @products = []
+        @orders.each do |ele|
+            @products.push(Product.find_by(id: ele.product_id))
+            # hash{}
+            # if hash[ele[:product_id]]
+            #     hash[ele[:product_id]][:quantity] +=  ele[:quantity] 
+            # else
+            #     hash[ele[:product_id]] = ele
+            # end
+        end
+        
+
         # hash.each do |key, value|
         #     @orders.push(value)
         # end

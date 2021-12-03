@@ -43,25 +43,26 @@ class Cart extends React.Component{
         this.state.product_name= order.product_name
     }
 
-    render(){       
+    render(){   
         return(
-            <div>
+            <div className='cart-page'>
                 <div>
                     <NavBarContainer/>
                 </div>
                 <div className='cart-flex-container' >
-                    <div className='col'>
+                    <div className='col1'>
 
                         <h1 className='cart-username'>
                             {this.props.currentUser.username}'s cart:
                         </h1>
-                        <ul>
+                        <p className='cart-price'>Price</p>
+                        <div className='cart-orders'>
                             {this.props.orders.map(order => <OrderIndexItem order={order} 
                             key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
-                        </ul>
+                        </div>
                     </div>
-                    <div className='col'>
-                        <button onClick={this.handleSubmitCheckOut}>
+                    <div className='col2'>
+                        <button onClick={this.handleSubmitCheckOut} className='checkout-button'>
                             Check Out
                         </button>
                     </div>
