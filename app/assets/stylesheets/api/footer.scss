@@ -1,0 +1,31 @@
+.footer-container{
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+.footer-tech-info, .footer-support-info, .footer-about-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+#link{
+    text-decoration: underline;
+    color: lightblue;
+}
+
+.footer-images{
+    padding-top: 10px;
+}
+.signup-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -65,11 +65,7 @@ class OrderIndexItem extends React.Component {
                         $ {this.props.order.price}
                     </div>
                 </div>
-                {/* <div>
-                    <button onClick={this.handleDeleteClick}>
-                        Delete
-                    </button>
-                </div> */}
+                
             </div>
         )
     }

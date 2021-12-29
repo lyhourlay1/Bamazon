@@ -3,6 +3,7 @@ import NavBarContainer from './nav_bar/nav_bar_container'
 import ProductContainer from  './products/product_container'
 import { fetchSearchProducts } from '../actions/product_action'
 import { Link } from 'react-router-dom'
+import Footer from './footer/footer'
 
 
 class Splash extends React.Component{
@@ -61,6 +62,7 @@ class Splash extends React.Component{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
         )
     }
