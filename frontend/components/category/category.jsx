@@ -53,11 +53,11 @@ class Category extends React.Component {
                         <p className='category-word'>Music</p>
                     </Link>
                 </div>
-                <div className='flex-category'>
+                {/* <div className='flex-category'>
                     <Link className="movie" onClick={this.update('movie')} to="/search/movie">
                         <p className='category-word'>Movie</p>
                     </Link>
-                </div>
+                </div> */}
             </div>
         )
     }

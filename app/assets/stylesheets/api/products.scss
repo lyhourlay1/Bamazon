@@ -17,10 +17,11 @@
 // }
 
 .products-flex{
-    width: 1500px;
+    width: inherit;
     display: flex;
     flex-wrap: wrap;
-    margin: 50px 10% 50px 10%;
+    // margin: 50px 10% 50px 10%;
+    margin-left: 15%;
 }
     
 .products-flex>* {
@@ -35,4 +36,10 @@
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+}
+.product-price{
+    color: red;
+}
+.product-details{
+    height: 70px;
 }

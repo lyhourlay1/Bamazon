@@ -41,6 +41,27 @@ product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/c
 product = Product.create({:product_name=> 'CL of 2ne1 MET GALA 2021 Dress Tighty Whitey, AMERICAN THEME, Designed by Alexander Wang', :description=> 'Former 2NE1 member CL made her Met Gala debut at the 2021 edition of “fashion’s biggest night out” on September 14 (September 13 in the US) at the Metropolitan Museum of Art in New York, USA. #The set includes Alexander Wang Underwear, Korean Demin Knott, and Denim Dress #Pefect fit for fashion week #work great for both warm and cold weater #100% cotton for the underwear #100% denim #Queen Look', :price=>2121.21, :quantity=>4, :seller_name=> 'Very Cherry', :category=> 'clothes', :unit=>"per set" })
 product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/clMet.jpeg'), filename: "ClMetBall.jpeg")
 
+product = Product.create({:product_name=> 'TWICE Formula of Love: O+T=<3 3rd Album Contents+Poster+Message PhotoCard SET+Tracking Kpop Sealed', :description=> 'Officially distributed Brand New & Orginal item from Manufacturer. #All items and features from original manufacturers are delivered in original sealed package condition. #Your purchase quantity will be count on Korea HANTEO & GAON Chart! #All ordered item will be shipped with a tracking number.', :price=>29.99, :quantity=>4, :seller_name=> 'JYP', :category=> 'music', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/twice.jpg'), filename: "twice.jpg")
+
+product = Product.create({:product_name=> 'Blackpink - [Kill This Love] 2nd Mini Album Pink Ver. CD+1p Poster/On+52p PhotoBook+16p Photo Zine+10p Accordion Lyrics Book+4p PhotoCard+1p Polaroid+Sticker SET+Tracking K-POP Sealed', :description=> 'Officially distributed Brand New & Orginal item from Manufacturer #All items and features from original manufacturers are delivered in original sealed package condition #Your purchase quantity will be count on Korea HANTEO & GAON Chart! #All ordered item will be shipped with a tracking number', :price=>25.99, :quantity=>4, :seller_name=> 'Very Cherry', :category=> 'music', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/blackpink.jpg'), filename: "blackpink.jpg")
+
+product = Product.create({:product_name=> 'Met Gala 2018 Iconic Look by Chadwick Boseman. 2018 Met Ball theme was "Heavenly Bodies: Fashion and the Catholic Imagination"', :description=> 'This is a steal. #Chadwick Boseman iconic 2018 look #Designed by Atelier Versace', :price=>2000.01, :quantity=>4, :seller_name=> 'Met Gala', :category=> 'clothes', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/Chadwick.jpeg'), filename: "chadwick.jpeg")
+
+product = Product.create({:product_name=> 'Met Gala 2019 Iconic Look by Kim Kardashian. 2019 Met Ball theme was "Camp: Notes on Fashion.', :description=> 'Wet Dress. #Kim Iconic Met Gala Look #latex #hard to put it on but it is worth it', :price=>4000.99, :quantity=>4, :seller_name=> 'Met Gala', :category=> 'clothes', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/kim2020.jpeg'), filename: "kim2020.jpeg")
+
+product = Product.create({:product_name=> 'Met Gala 2018 Iconic Look by Rihanna. 2018 Met Ball theme was "Heavenly Bodies: Fashion and the Catholic Imagination"', :description=> 'One of the most iconic look from Rihanna. #fashion icon #come with 5 pieces(headpiece, cape, dress, and necklace)', :price=>100000.01, :quantity=>4, :seller_name=> 'Met Gala', :category=> 'clothes', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/rihanna2019.jpeg'), filename: "rihanna2018.jpeg")
+
+product = Product.create({:product_name=> 'Met Gala 2015 Iconic Look by Rihanna. 2015 Met Ball theme wasChina: Through the Looking Glass', :description=> '#iconic Omelette Look #Designed by Chinese designer Guo Pei, taking over 6,000 hours to make, and weighing in at 25 kilograms  #complete masterpiece', :price=>9000.99, :quantity=>4, :seller_name=> 'Met Gala', :category=> 'clothes', :unit=>"per set" })
+product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/rihanna2018.jpeg'), filename: "rihanna2015.jpeg")
+
+# product = Product.create({:product_name=> '', :description=> '', :price=>2121.21, :quantity=>4, :seller_name=> 'Very Cherry', :category=> 'clothes', :unit=>"per set" })
+# product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/rihanna2019.jpeg'), filename: "rihanna2019.jpeg")
+
 product = Product.create({:product_name=> 'CL - ALPHA (Vol.1) Album (Color ver.)', :description=> '🎈Ships from Korea #📆Release Date : 2021.10.22 #🎵Sleeve + Jewel Case + CD + 44p Photobook + Scratch Card + Sticker #📌100% Original Brand New Item. #Sales volume is reflected in the HANTEO and GAON Charts.', :price=>25.21, :quantity=>4, :seller_name=> 'Very Cherry', :category=> 'music', :unit=>"per set" })
 product.photos.attach(io: open('https://bamazon-dev.s3.us-west-1.amazonaws.com/colorAlpha.jpg'), filename: "colorAlpha.jpg")
 
