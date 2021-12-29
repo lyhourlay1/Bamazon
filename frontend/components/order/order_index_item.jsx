@@ -45,7 +45,7 @@ class OrderIndexItem extends React.Component {
                 </div>
                 <div className='order-col-details'>
                     
-                    <div>
+                    <div className="product-middle">
                         <div className='cart-product-name'>
                             <Link to={`/products/${this.props.order.product_id}`}> 
                                 {this.props.order.product_name}

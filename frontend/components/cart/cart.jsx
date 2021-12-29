@@ -74,12 +74,12 @@ class Cart extends React.Component{
                             key={order.id} deleteOrder = {this.props.deleteOrder} updateOrder = {this.props.updateOrder} fetchOrder={this.props.fetchOrder}/>)}
                         </div>
                         <div className='total-col1'>
-                            Total: {display}
+                            Total:$ {display}
                         </div>
                     </div>
                     <div className='col2'>
                         <div className='total-col2'>
-                            Total: {display}
+                            Total:$ {display}
                         </div>
                         <button onClick={this.handleSubmitCheckOut} className='checkout-button'>
                             Check Out
