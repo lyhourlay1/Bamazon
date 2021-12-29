@@ -40,7 +40,7 @@ class NavBar extends React.Component{
                     <div className='drop-down-content'>
                         <div>
                             New Customer?  
-                            <Link className="btn" to="/signup"> Start here</Link>
+                            <Link id="link-ref" to="/signup"> Start here</Link>
                         </div>
                     </div>
                     <div>

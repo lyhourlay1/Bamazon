@@ -90,7 +90,22 @@ button:hover{
 }
 
 .hover-to-auth:hover .auth-home{
-  display: block;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 5;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  height: 20vh;
+  width: 10vw;
+  text-align: center;
+}
+
+#link-ref{
+  color: blue;
+  text-decoration: underline;
 }
 /* .display-wrapper{
   font-size: 15px;
