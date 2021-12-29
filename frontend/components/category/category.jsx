@@ -15,7 +15,7 @@ class Category extends React.Component {
         // e.preventDefault()
         // this.update()
         this.props.fetchSearchProducts(this.state.query)
-            .then(() => this.props.history.push(`/search/${this.state.query}`))
+            // .then(() => this.props.history.push(`/search/${this.state.query}`))
     }
     update(field) {
         return () => {

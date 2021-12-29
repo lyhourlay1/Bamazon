@@ -43,8 +43,8 @@ class ProductShow extends React.Component{
                 </div>
                 <div className= 'product-show-flex'>
                     <div className='product-show-image'>
-                        {this.props.product.photoUrls.map(url=> 
-                            <img src={url} height='380px'/>                        
+                        {this.props.product.photoUrls.map((url, index)=> 
+                            <img src={url} height='380px' key={index}/>                        
                             )}
                     </div>
                     <div className='details' >
