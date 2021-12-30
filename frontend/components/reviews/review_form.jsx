@@ -17,7 +17,7 @@ class ReviewForm extends React.Component{
         super(props)
 
         this.state ={
-            rating: 1,
+            rating: 0,
             headline: "",
             comment: "",
             product_id: this.props.productId,
@@ -66,26 +66,38 @@ class ReviewForm extends React.Component{
                 </div>
                 <div className='review-flex-container'>
                     <div className ='review-form-container'>
+                        <div className= "error-message">
+                            {this.renderErrors()}
+                        </div>
                         <div className='review-header'>
                             Create Review for {this.props.product.product_name}
                         </div>
                         <div>
-                            {this.renderErrors()}
-                        </div>
-                        <div>
                             <form>
                                 <div>
-                                    Overall Rating:
                                     <div>
-                                        <select onChange={this.update('rating')} value={this.state.rating}>
+                                        Overall Rating:
+                                    </div>
+                                        {/* <select onChange={this.update('rating')} value={this.state.rating}>
                                             <option value={1} >1</option>
                                             <option value={2}>2</option>
                                             <option value={3}>3</option>
                                             <option value={4}>4</option>
                                             <option value={5}>5</option>
-                                        </select>
-                                    </div>
+                                        </select> */}
                                 </div>
+                                        <div className="rating">
+                                            <input type="radio" name="star" id="star1" onClick= {this.update("rating")} value={5} />
+                                            <label htmlFor="star1"></label>
+                                            <input type="radio" name="star" id="star2" onClick= {this.update("rating")} value={4}/>
+                                            <label htmlFor="star2"></label>
+                                            <input type="radio" name="star" id="star3" onClick= {this.update("rating")} value={3}/>
+                                            <label htmlFor="star3"></label>
+                                            <input type="radio" name="star" id="star4" onClick= {this.update("rating")} value={2}/>
+                                            <label htmlFor="star4"></label>
+                                            <input type="radio" name="star" id="star5" onClick= {this.update("rating")} value={1}/>
+                                            <label htmlFor="star5"></label>
+                                        </div>
 
                                 <div>
                                     <div>
@@ -104,9 +116,7 @@ class ReviewForm extends React.Component{
                                     <button onClick={this.handleSubmitReview}>
                                         Submit
                                     </button>
-
                                 </div>
-
                             </form>
                         </div>
                     </div>                
