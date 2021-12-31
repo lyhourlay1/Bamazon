@@ -28,7 +28,6 @@ class Cart extends React.Component{
 
     handleSubmitCheckOut(e){
         e.preventDefault()
-        console.log(this.state)
         let orders = this.props.orders
         for(let i=0; i< orders.length; i++){
             this.update(orders[i])

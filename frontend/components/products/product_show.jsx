@@ -61,6 +61,9 @@ class ProductShow extends React.Component{
             }
             i++;
         }
+
+        let arrayDes= this.props.product.description.split("#")
+    
         return(
             <div>
                 <div>
@@ -69,7 +72,7 @@ class ProductShow extends React.Component{
                 <div className= 'product-show-flex'>
                     <div className='product-show-image'>
                         {this.props.product.photoUrls.map((url, index)=> 
-                            <img src={url} height='380px' key={index}/>                        
+                            <img src={url} width='350px' key={index}/>                        
                             )}
                     </div>
                     <div className='details' >
@@ -83,7 +86,7 @@ class ProductShow extends React.Component{
                             About this item 
                         </h2>
                         <h2 className='product-show-description' id='row'>
-                            {this.props.product.description} 
+                            {arrayDes.map(ele => <li>{ele}</li>)} 
                         </h2>
                     </div>
                     <div className='add-to-cart'>
@@ -145,7 +148,7 @@ class ProductShow extends React.Component{
                         </div>
                         
                         <div className='show-reviews'>
-                            {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
+                            {this.props.reviews.reverse().map(review=><ReviewIndexItem review={review} key={review.id}/>)}
                         </div>
                     </div>
                 </div>
