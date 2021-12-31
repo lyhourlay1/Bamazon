@@ -10,11 +10,12 @@
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  username   :string
 #
 class Review < ApplicationRecord
 
 
-    validates :rating, :product_id, :user_id, :comment, :headline, presence:true
+    validates :rating, :username, :product_id, :user_id, :comment, :headline, presence:true
     
 
     belongs_to :product,
