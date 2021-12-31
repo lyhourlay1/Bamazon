@@ -15,7 +15,7 @@ class Review < ApplicationRecord
 
 
     validates :rating, :product_id, :user_id, :comment, :headline, presence:true
-
+    
 
     belongs_to :product,
         primary_key: :id,

@@ -35,6 +35,26 @@ class ProductShow extends React.Component{
         if(!this.props.product){
             return null
         }
+        let ratings = this.props.reviews.map(review=> review.rating)
+        let overallRating = ratings.reduce((a, b)=> a + b, 0)/ (ratings.length *1.0)
+        let rating = overallRating
+        let i=0;
+        let stars = []
+        while(i<5){
+            if(overallRating<0.5){
+                stars.push("black-star")
+            }
+            else if(overallRating>=0.5 && overallRating<1){
+                stars.push("half-star")
+                overallRating--;
+
+            }
+            else if(overallRating >=1){
+                overallRating--;
+                stars.push("gold-star")
+            }
+            i++;
+        }
         
         return(
             <div>
@@ -101,11 +121,27 @@ class ProductShow extends React.Component{
                     </div>
                 </div>
                 <div className='product-show-review'>
-                    <div className='review-heading'>
-                        Top reviews from the United States
+                    <div className='overall-review'>
+                        <div className='overall-customer'>Overall Rating From Customer</div>
+                        <div className='overall-stars'>
+                            {stars.map((ele,index)=> <div className={ele} key={index}></div>)}
+                            {rating} out of 5
+                            <br />
+                        </div>
+                        <div className='total-ratings'>
+                            {ratings.length} global ratings
+                        </div>
+                
+
                     </div>
-                    <div className='show-reviews'>
-                        {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
+                    <div className='review-index'>
+                        <div className='review-heading'>
+                            Recent Reviews
+                        </div>
+                        
+                        <div className='show-reviews'>
+                            {this.props.reviews.map(review=><ReviewIndexItem review={review} key={review.id}/>)}
+                        </div>
                     </div>
                 </div>
             </div>

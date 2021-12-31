@@ -17,7 +17,7 @@ class ReviewForm extends React.Component{
         super(props)
 
         this.state ={
-            rating: 0,
+            rating: "",
             headline: "",
             comment: "",
             product_id: this.props.productId,

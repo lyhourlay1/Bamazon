@@ -97,3 +97,56 @@
 .error-message{
     color: red;
 }
+
+.black-star:before{
+    content: '\f005';
+    font-family: fontAwesome;
+
+}
+.gold-star:before{
+    content: '\f005';
+
+    color: gold;
+    font-family: fontAwesome;
+    
+}
+.half-star:before{
+    content: '\f005';
+    font-family: fontAwesome;
+}
+
+.overall-stars{
+    display: flex;
+    padding-left: 20px;
+
+}
+
+.overall-customer{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    text-decoration: underline;
+    
+}
+
+.total-ratings{
+    color: grey;
+    padding-left: 20px;
+}
+
+.ratings-stars{
+    display: flex;
+}
+
+.review-item{
+    padding-bottom: 20px;
+    border-bottom: 1px gray solid;
+}
+
+.review-description{
+    font-weight: bold;
+}
+
+.review-index{
+    width: 700px;
+}

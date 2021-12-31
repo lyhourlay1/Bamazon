@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .transaction-flex{
-    width: 1500px;
+    width: inherit;
     display: flex;
     flex-wrap: wrap;
-    margin: 100px 0 50px 23%;
+    margin-left: 13%;
 }
     
 .transaction-flex>* {
