@@ -21,11 +21,15 @@ class ReviewIndexItem extends React.Component {
             }
             i++;
         }
+        let date = new Date(this.props.review.created_at).toString().split(" ").slice(0,4).join(" ")
+
+
         return (
             <div className='review-item'>
                 <div className='review-description'>
-                    "{this.props.review.comment}"" By
+                    "{this.props.review.headline}" By {this.props.review.username}
                 </div>
+                <div>Reviewed on {date}</div>
                 <div className='review-rating'>
                     <div className='ratings-stars'>
                             {stars.map((ele,index)=> <div className={ele} key={index}></div>)}
@@ -33,7 +37,7 @@ class ReviewIndexItem extends React.Component {
                 </div>
             
                 <div className= 'review-headline'>
-                    {this.props.review.headline}
+                    {this.props.review.comment}
                 </div>     
             </div>
         )

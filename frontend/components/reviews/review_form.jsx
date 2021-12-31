@@ -21,18 +21,19 @@ class ReviewForm extends React.Component{
             headline: "",
             comment: "",
             product_id: this.props.productId,
-            user_id: this.props.currentUser.id
+            user_id: this.props.currentUser.id,
+            username: this.props.currentUser.username,
         }
         this.handleSubmitReview = this.handleSubmitReview.bind(this)
     }
     componentDidMount(){
         this.props.fetchProduct(this.props.productId)
     }
-
+    
     handleSubmitReview(e){
         e.preventDefault()
         this.props.createReview(this.state).then(()=>this.props.history.push('/transactions'))
-
+        
     }
     update(field){
         return (e)=>{
