@@ -36,7 +36,13 @@ class ProductShow extends React.Component{
             return null
         }
         let ratings = this.props.reviews.map(review=> review.rating)
-        let overallRating = ratings.reduce((a, b)=> a + b, 0)/ (ratings.length *1.0)
+        let overallRating
+        if(ratings.length ===0){
+            overallRating=0
+        }else{
+
+            overallRating = ratings.reduce((a, b)=> a + b, 0)/ (ratings.length *1.0)
+        }
         let rating = overallRating
         let i=0;
         let stars = []
