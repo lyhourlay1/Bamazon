@@ -26,9 +26,6 @@ class ReviewIndexItem extends React.Component {
                 <div className='review-description'>
                     "{this.props.review.comment}"" By
                 </div>
-                {/* <div className='review-author'>
-                    By: 
-                </div> */}
                 <div className='review-rating'>
                     <div className='ratings-stars'>
                             {stars.map((ele,index)=> <div className={ele} key={index}></div>)}
@@ -37,8 +34,7 @@ class ReviewIndexItem extends React.Component {
             
                 <div className= 'review-headline'>
                     {this.props.review.headline}
-                </div>
-                
+                </div>     
             </div>
         )
     }
