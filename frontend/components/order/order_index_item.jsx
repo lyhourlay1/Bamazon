@@ -13,7 +13,6 @@ class OrderIndexItem extends React.Component {
     }
 
     update(field) {
-        debugger
         return (e) => {
             this.setState({ [field]: e.target.value }, ()=>{
                 this.props.updateOrder(this.state)

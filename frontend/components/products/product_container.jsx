@@ -6,7 +6,8 @@ const mSTP = (state,ownProps)=> {
     
     return {
     products: Object.values(state.entities.products),
-    query: ownProps.match.params.query
+    query: ownProps.match.params.query,
+    // errors: errors.products
 }}
 
 const mDTP = dispatch =>({

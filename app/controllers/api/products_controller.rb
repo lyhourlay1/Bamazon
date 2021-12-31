@@ -37,7 +37,7 @@ class Api::ProductsController < ApplicationController
         if @products.length > 0
             render :index
         else
-            render json: ["Sorry, we did not find any results for #{query}, try another search"], status: 404
+            render json: ["Sorry, we did not find any results for #{query}, try another search"],status: 404
         end
     end
 

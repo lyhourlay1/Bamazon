@@ -6,6 +6,7 @@ import CartContainer from './cart/cart_container'
 import TransactionContainer from './transactions/transaction_container'
 import ReviewFormContainer from './reviews/review_form_container'
 import ProductContainer from './products/product_container'
+import Errors from './error/errors'
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import {Route, Switch} from 'react-router-dom'
 import Splash from './splash'
@@ -16,6 +17,7 @@ export default ()=> (
             <AuthRoute path="/signup" component={SignupContainer}/>
             <AuthRoute path="/login" component={LoginContainer}/>
             <Route exact path="/search/:query" component={ProductContainer} />
+            <Route exact path="/errors" component={Errors} />
             <Route path="/products/:productId" component= {ProductShowContainer}/>
             <Route path="/reviewForm/:productId" component= {ReviewFormContainer}/>
             <ProtectedRoute path="/transactions/" component= {TransactionContainer}/>

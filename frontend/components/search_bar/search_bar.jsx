@@ -4,7 +4,8 @@ class SearchBar extends React.Component{
     constructor(props){
         super(props)
         this.state= {
-            query: ''
+            query: '',
+            errors: props.errors
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -12,15 +13,16 @@ class SearchBar extends React.Component{
     handleSubmit(e){
         e.preventDefault()
         this.props.fetchSearchProducts(this.state.query)
-        .then(()=> this.props.history.push(`/search/${this.state.query}`))
+        .then(()=> this.props.history.push(`/search/${this.state.query}`),()=> this.props.history.push(`/errors`))
+        // .catch(this.props.history.push(`/errors`))
     }
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value })
         }
     }
-
-    render(){    
+ 
+    render(){ 
         return (
             <div className= 'search-bar'>
                 <form className='formSearch'>
@@ -29,6 +31,7 @@ class SearchBar extends React.Component{
                         <img src="images/searchBar.jpeg" className= 'search-icon'/>
                     </button>
                 </form>
+
             </div>
         )
     }

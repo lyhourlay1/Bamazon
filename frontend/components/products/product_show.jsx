@@ -61,7 +61,6 @@ class ProductShow extends React.Component{
             }
             i++;
         }
-        debugger
         return(
             <div>
                 <div>

@@ -4,12 +4,22 @@ import ProductContainer from  './products/product_container'
 import { fetchSearchProducts } from '../actions/product_action'
 import { Link } from 'react-router-dom'
 import Footer from './footer/footer'
+import { cleanErrors } from '../actions/product_action'
+import { connect } from 'react-redux'
 
+
+// const mDTP = dispatch =>({
+//     cleanErrors:  ()=> dispatch(cleanErrors)
+// })
 
 class Splash extends React.Component{
+    constructor(props){
+        super(props)
+        // props.cleanErrors()
+    }
 
 
-    render(){
+    render(){    
     return (
         <div>
             <NavBarContainer/>
@@ -67,4 +77,4 @@ class Splash extends React.Component{
         )
     }
 }
-export default Splash
+export default (Splash)

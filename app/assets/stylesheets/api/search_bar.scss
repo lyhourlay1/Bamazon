@@ -1,5 +1,16 @@
-// .search-icon{
-//     width: 15px;
-//     height: 15px;
-// }
-
+.\.search-errors {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.error-text {
+    margin-top: 150px;
+    width: 600px;
+    color: grey;
+    border: 4px solid grey;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: lightgoldenrodyellow;
+}

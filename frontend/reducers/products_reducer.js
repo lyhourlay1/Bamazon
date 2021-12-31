@@ -7,7 +7,7 @@ const ProductsReducer = (state={}, action)=>{
             return action.products
         case RECEIVE_PRODUCT:
             newState[action.product.id]= action.product
-            return newState
+            return newState;
         default:
             return state
     }
