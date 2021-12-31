@@ -58,6 +58,7 @@ class Api::OrdersController < ApplicationController
     def update
         
         @order = Order.find(params[:id])
+        @product = Product.find_by(id: @order.product_id)
         if @order.update(order_params)
             render :show
         else
