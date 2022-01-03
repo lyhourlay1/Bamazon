@@ -12,6 +12,8 @@ class Signup extends React.Component{
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        props.clearSessionErrors();
+
     }
     update(field){
         return (e)=>{
@@ -46,7 +48,7 @@ class Signup extends React.Component{
                     </Link>
                     <div className='auth-container'>
                         <h2 className='padding' id='auth-heading'>Sign Up!</h2>
-                        <h2 className='padding'>
+                        <h2 className='padding' id= "error-session">
                             {this.renderErrors()}
                         </h2>
                         <form >

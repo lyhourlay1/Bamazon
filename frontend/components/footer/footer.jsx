@@ -32,10 +32,10 @@ class Footer extends React.Component{
                     </a>
                 </div>
             
-                <a href="https://github.com/lyhourlay1" className="footer-images">
+                <a target="blank" href="https://github.com/lyhourlay1" className="footer-images">
                     <img src="/images/github-logo.png" width="100px"/> 
                 </a> 
-                <a href="https://www.linkedin.com/in/lyhour/" className="footer-images">
+                <a target="blank" href="https://www.linkedin.com/in/lyhour/" className="footer-images">
                     <img src="/images/linkedin.png" width="100px"/> 
                 </a> 
             </div>

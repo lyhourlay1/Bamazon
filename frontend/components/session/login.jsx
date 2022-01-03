@@ -12,6 +12,9 @@ class Login extends React.Component{
             password: ""
         }
         this.handleSubmit= this.handleSubmit.bind(this)
+
+        props.clearSessionErrors();
+
     }
     update(field){
         return (e) => {
@@ -46,7 +49,7 @@ class Login extends React.Component{
                     </Link>
                     <div className='auth-container'>
                         <h2 className='padding' id='auth-heading'>Sign-In!</h2>
-                        <h2 className='padding'>{this.renderErrors()}</h2>
+                        <h2 className='padding' id= "error-session" >{this.renderErrors()}</h2>
                         <form >
                             <div className='padding'>
                                 <h4>Username</h4>
@@ -63,7 +66,7 @@ class Login extends React.Component{
                         <p className='padding'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
                         <div className='padding'>
                             <button >
-                                    <Link className="btn" to="/signup">Create your Bamazon Account</Link>
+                                <Link className="btn" to="/signup">Create your Bamazon Account</Link>
                             </button>
                         </div>
                     </div>
