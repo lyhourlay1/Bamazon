@@ -54,15 +54,15 @@ class Signup extends React.Component{
                         <form >
                             <div className='padding'>
                                 <h4>Username</h4>
-                                <input type="text" value={this.state.username} onChange={this.update('username')} id='input-box'/>
+                                <input type="text" value={this.state.username} onChange={this.update('username')} id='input-box1' className="input-box"/>
                             </div>
                             <div className='padding'>
                                 <h4>Email</h4>
-                                <input type="text" value={this.state.email} onChange={this.update('email')} id='input-box'/>
+                                <input type="text" value={this.state.email} onChange={this.update('email')} id='input-box2' className="input-box"/>
                             </div>
                             <div className='padding'>
                                 <h4>Password</h4>
-                                <input type="password" value={this.state.password} onChange={this.update('password')} id='input-box'/>
+                                <input type="password" value={this.state.password} onChange={this.update('password')} id='input-box3' className="input-box"/>
                             </div>
                             <div className='padding'>
                                 <button onClick={this.handleSubmit}>Sign Up</button>
